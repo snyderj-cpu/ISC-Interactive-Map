@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#233b83">
+  <meta name="description" content="Explore the International School of Curaçao campus, classrooms, learning spaces and facilities.">
+  <meta property="og:title" content="Explore Our Campus | International School of Curaçao">
+  <meta property="og:description" content="An interactive guide to the ISC campus.">
+  <title>Campus Explorer | International School of Curaçao</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data/rooms.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to campus explorer</a>
+  <div class="microbar"><div class="wrap microbar-inner"><span>Learning for Global Citizenship</span><a href="https://www.isc.cw/" target="_blank" rel="noopener noreferrer">Return to ISC website <span aria-hidden="true">↗</span></a></div></div>
+  <header class="site-header"><div class="wrap header-inner">
+    <a class="brand" href="https://www.isc.cw/" aria-label="International School of Curaçao home"><span class="brand-icon" aria-hidden="true"><span>ISC</span></span><span class="brand-words"><strong>International School</strong><small>of Curaçao</small></span></a>
+    <nav class="top-nav" aria-label="Site links"><a class="active" href="#main" aria-current="page">Campus Explorer</a><a href="https://www.isc.cw/admissions-office" target="_blank" rel="noopener noreferrer">Admissions ↗</a><a class="nav-cta" href="mailto:admissions@isc.cw?subject=ISC%20Campus%20Tour%20Inquiry">Arrange a Visit <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+
+  <main id="main">
+    <section class="hero"><div class="wrap hero-inner">
+      <div class="hero-copy"><div class="eyebrow"><span class="line"></span> VIRTUAL CAMPUS GUIDE</div><h1>Explore our <em>campus.</em></h1><p>Discover the spaces where our community learns, creates, and connects. Select any classroom or facility on the map to explore.</p>
+        <div class="hero-pills"><span>Early years – Grade 12</span><span id="heroYear">2026–2027</span><span id="heroCount">Interactive rooms</span></div>
+      </div><div class="hero-watermark" aria-hidden="true">ISC<span>↗</span></div>
+    </div></section>
+
+    <section class="explorer-section wrap" aria-label="Interactive ISC campus map">
+      <div id="previewBanner" class="preview-banner"><span class="preview-pill">PREVIEW</span><span>This is a demonstration using the provided 2026–2027 diagram. Staff assignments, imagery and room details require approval before publishing.</span></div>
+      <div class="section-heading"><div><span class="eyebrow dark">DISCOVER ISC</span><h2>Find your place.</h2><p>Choose an area, search for a room, or click directly on the map.</p></div><div class="mini-stat"><b id="totalSpaces">—</b><span>mapped spaces</span></div></div>
+
+      <div class="controls-card">
+        <div class="filter-box"><label for="searchInput" class="field-label">Search the campus</label><div class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input id="searchInput" type="search" placeholder="Room, teacher, or facility…" autocomplete="off"><button id="clearSearch" class="clear-btn" type="button" aria-label="Clear search" hidden>×</button></div></div>
+        <div class="filter-box"><label for="zoneSelect" class="field-label">Campus area</label><select id="zoneSelect"><option value="all">All campus areas</option><option value="North campus">North of Koninginnelaan</option><option value="South campus">South of Koninginnelaan</option></select></div>
+        <div class="filter-box category-box"><label for="categorySelect" class="field-label">Space type</label><select id="categorySelect"><option value="all">All rooms & facilities</option></select></div>
+        <button class="outline-button reset-filters" id="resetFilters" type="button">Reset filters</button>
+      </div>
+
+      <div class="explorer-layout">
+        <div class="map-col">
+          <div class="map-card">
+            <div class="map-topbar"><div><span class="map-title">Campus map</span><span class="map-subtitle">Select an outlined space for more information</span></div><div class="view-switch" role="group" aria-label="Map style"><button id="schematicTab" type="button" class="active" aria-pressed="true">School plan</button><button id="droneTab" type="button" aria-pressed="false">Aerial view <span class="soon-dot" title="Drone imagery coming soon"></span></button></div></div>
+            <div class="map-canvas" id="mapCanvas">
+              <div class="map-transform" id="mapTransform">
+                <div class="schematic-view" id="schematicView"><img class="base-map" src="assets/campus-map-2026-2027.png" alt="International School of Curaçao campus diagram, 2026–2027, with Koninginnelaan separating the north and south portions of campus." draggable="false"><svg id="roomOverlay" class="room-overlay" viewBox="0 0 917 679" preserveAspectRatio="none" aria-label="Select a room from the ISC school plan"></svg></div>
+                <div class="drone-view" id="droneView" hidden><div class="drone-waiting" id="droneWaiting"><span class="drone-icon" aria-hidden="true">⌁</span><h3>A fresh perspective is coming.</h3><p>ISC's drone image will appear here when available. The room list and details are already accessible in the school plan view.</p><label class="upload-preview" for="droneUpload">Preview a drone image <span aria-hidden="true">↑</span></label><input id="droneUpload" type="file" accept="image/png,image/jpeg,image/webp" hidden><small>A local preview stays on your device. See README for publishing instructions.</small></div><div class="drone-loaded" id="droneLoaded" hidden><img id="dronePhoto" src="" alt="Aerial photograph of ISC campus" draggable="false"><svg id="droneOverlay" class="drone-overlay" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-label="Aerial room overlay"></svg><div id="uncalibrated" class="uncalibrated">Aerial hotspots still need alignment. Use the school plan to choose rooms.</div></div></div>
+              </div>
+              <div class="map-controls"><button type="button" id="zoomIn" title="Zoom in" aria-label="Zoom in">+</button><button type="button" id="zoomOut" title="Zoom out" aria-label="Zoom out">−</button><button type="button" id="zoomReset" title="Reset view" aria-label="Reset map view">⤢</button></div>
+              <div class="map-hint" id="mapHint">Click a space · Drag to pan · Use + / − to zoom</div>
+            </div>
+            <div class="map-bottombar"><div class="legend"><span><i class="legend-dot blue"></i>Classrooms & spaces</span><span><i class="legend-dot pink"></i>Selected space</span></div><span id="mapResultCount" aria-live="polite">Explore all spaces</span></div>
+          </div>
+          <section class="featured"><div class="featured-head"><h3>Popular places to explore</h3><span>START HERE</span></div><div class="featured-items" id="featuredItems"></div></section>
+        </div>
+
+        <aside class="details-col" aria-label="Selected room and directory">
+          <div class="detail-card" id="detailCard" aria-live="polite">
+            <div class="empty-detail"><div class="empty-art"><svg viewBox="0 0 128 128" aria-hidden="true"><rect x="12" y="23" width="104" height="83" rx="5" fill="#eff5fb" stroke="#477ab9" stroke-width="2"/><path d="M12 50h104M48 23v83M81 50v56" fill="none" stroke="#477ab9" stroke-width="2"/><path d="M48 23h33v27H48z" fill="#d6e8f5"/><path d="M15 85h28v18H15z" fill="#c8dff0"/><path d="M69 62l11 12 20-24" fill="none" stroke="#e84d64" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="eyebrow dark">YOUR VIRTUAL VISIT STARTS HERE</span><h3>Select a space to explore</h3><p>Choose a classroom on the map or use the directory below to see photos, staff details and future 360° tours.</p></div>
+          </div>
+          <div class="directory-card"><div class="directory-heading"><div><h3>Campus directory</h3><p id="directoryCount">All spaces</p></div><span aria-hidden="true">↗</span></div><div class="directory-list" id="directoryList" aria-label="Filtered rooms"></div></div>
+        </aside>
+      </div>
+      <div class="info-note"><span class="info-icon" aria-hidden="true">i</span><div><strong>About the map</strong><p>The school plan is based on ISC's 2026–2027 diagram. Room details are being assembled; opening a classroom does not mean photos, profiles or 360° tours have been approved or published yet.</p></div></div>
+    </section>
+    <section class="cta-band"><div class="wrap cta-inner"><div><span class="eyebrow">COME SEE FOR YOURSELF</span><h2>Your ISC visit starts here.</h2><p>Our admissions team can help you arrange a visit and learn more about the ISC community.</p></div><a href="mailto:admissions@isc.cw?subject=ISC%20Campus%20Tour%20Inquiry" class="light-cta">Contact Admissions <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><div class="footer-brand">International School of Curaçao<span>Learning for Global Citizenship</span></div><div><a href="https://www.isc.cw/">Official ISC website ↗</a><a href="https://www.isc.cw/contact">Contact ↗</a><small>Campus Explorer • 2026–2027</small></div></div></footer>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photograph viewer" hidden><button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close photograph">×</button><img src="" id="lightboxImage" alt=""><span id="lightboxCaption"></span></div>
+</body>
+</html>
