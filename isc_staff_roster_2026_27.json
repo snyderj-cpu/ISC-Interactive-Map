@@ -1,0 +1,820 @@
+{
+  "school_year": "2026–2027",
+  "source": "User-provided ISC teacher roster screenshot",
+  "notes": [
+    "Courses are copied from visible cells; abbreviations SH, I&S, PPA, and LR retained where possible.",
+    "Programme checkbox categories reflect visible checkmarks.",
+    "Map room names preserve the supplied map rather than independently verifying physical allocations.",
+    "Map-only names absent from the roster are left unassigned."
+  ],
+  "staff": [
+    {
+      "name": "Ana Arboleda",
+      "first_name": "Ana",
+      "last_name": "Arboleda",
+      "programmes_marked": [],
+      "assignments_by_grade": {},
+      "map_spaces": [
+        "Main Office"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Halimeh Al Ayoubi",
+      "first_name": "Halimeh",
+      "last_name": "Al Ayoubi",
+      "programmes_marked": [
+        "PYP"
+      ],
+      "assignments_by_grade": {
+        "PYP": [
+          "Grade 4"
+        ]
+      },
+      "map_spaces": [
+        "Grade 4"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Aftan Schoonen",
+      "first_name": "Aftan",
+      "last_name": "Schoonen",
+      "programmes_marked": [
+        "PYP",
+        "MYP"
+      ],
+      "assignments_by_grade": {
+        "PYP": [
+          "Media"
+        ],
+        "6": [
+          "Learning Resource"
+        ],
+        "7": [
+          "Learning Resource"
+        ],
+        "8": [
+          "Learning Resource"
+        ],
+        "9": [
+          "Learning Resource 9/10"
+        ],
+        "10": [
+          "Learning Resource 9/10"
+        ]
+      },
+      "map_spaces": [
+        "Media Center"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Allison Ische",
+      "first_name": "Allison",
+      "last_name": "Ische",
+      "programmes_marked": [
+        "PYP"
+      ],
+      "assignments_by_grade": {
+        "PYP": [
+          "Grade 2"
+        ]
+      },
+      "map_spaces": [
+        "Grade 2"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Allison Violenes",
+      "first_name": "Allison",
+      "last_name": "Violenes",
+      "programmes_marked": [
+        "PYP",
+        "MYP"
+      ],
+      "assignments_by_grade": {
+        "PYP": [
+          "Music"
+        ],
+        "6": [
+          "Choir 6"
+        ],
+        "7": [
+          "Choir 7"
+        ],
+        "8": [
+          "Choir 8"
+        ],
+        "9": [
+          "High School Choir"
+        ],
+        "10": [
+          "High School Choir"
+        ]
+      },
+      "map_spaces": [
+        "Music Room"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Babette de Waele",
+      "first_name": "Babette",
+      "last_name": "de Waele",
+      "programmes_marked": [
+        "MYP",
+        "DP"
+      ],
+      "assignments_by_grade": {
+        "6": [
+          "Design 6"
+        ],
+        "7": [
+          "Art 7A/B"
+        ],
+        "8": [
+          "Design 8",
+          "SH 8"
+        ],
+        "9": [
+          "Art 9"
+        ],
+        "10": [
+          "Design 10"
+        ],
+        "11": [
+          "DP Visual Arts"
+        ],
+        "12": [
+          "DP Visual Arts"
+        ]
+      },
+      "map_spaces": [
+        "Picasso"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Diana Melfor",
+      "first_name": "Diana",
+      "last_name": "Melfor",
+      "programmes_marked": [
+        "PYP",
+        "MYP"
+      ],
+      "assignments_by_grade": {},
+      "map_spaces": [
+        "Staff Room / SS2",
+        "Elementary Coordinator"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Douglas Vaughan",
+      "first_name": "Douglas",
+      "last_name": "Vaughan",
+      "programmes_marked": [
+        "PYP",
+        "MYP"
+      ],
+      "assignments_by_grade": {},
+      "map_spaces": [
+        "Admissions Conference Room"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Goumana El-Hage",
+      "first_name": "Goumana",
+      "last_name": "El-Hage",
+      "programmes_marked": [
+        "MYP"
+      ],
+      "assignments_by_grade": {
+        "6": [
+          "Individuals & Societies 6"
+        ],
+        "7": [
+          "Individuals & Societies 7"
+        ],
+        "9": [
+          "Individuals & Societies 9",
+          "PPA"
+        ],
+        "10": [
+          "PPA"
+        ],
+        "11": [
+          "CAS"
+        ],
+        "12": [
+          "CAS"
+        ]
+      },
+      "map_spaces": [
+        "Kala"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Hanadi El Hajj",
+      "first_name": "Hanadi",
+      "last_name": "El Hajj",
+      "programmes_marked": [
+        "MYP"
+      ],
+      "assignments_by_grade": {
+        "6": [
+          "English 6",
+          "SH 6/8"
+        ],
+        "7": [
+          "English 7A",
+          "English 7B"
+        ],
+        "8": [
+          "English 8"
+        ],
+        "9": [
+          "English 9",
+          "SH 6/8"
+        ],
+        "10": [
+          "English 9"
+        ]
+      },
+      "map_spaces": [
+        "Chuchubi"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Jessica Chang",
+      "first_name": "Jessica",
+      "last_name": "Chang",
+      "programmes_marked": [
+        "MYP",
+        "DP"
+      ],
+      "assignments_by_grade": {
+        "10": [
+          "English 10"
+        ],
+        "11": [
+          "DP English A Literature",
+          "DP English B",
+          "TOK 11"
+        ],
+        "12": [
+          "DP English A Literature",
+          "DP English B",
+          "TOK 12"
+        ]
+      },
+      "map_spaces": [
+        "Lagadishi"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Angelica Galicia",
+      "first_name": "Angelica",
+      "last_name": "Galicia",
+      "programmes_marked": [],
+      "assignments_by_grade": {},
+      "map_spaces": [
+        "ICT Department"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Jos Nous",
+      "first_name": "Jos",
+      "last_name": "Nous",
+      "programmes_marked": [
+        "MYP"
+      ],
+      "assignments_by_grade": {
+        "6": [
+          "PE 6"
+        ],
+        "7": [
+          "PE 7A",
+          "PE 7B"
+        ],
+        "8": [
+          "PE 8"
+        ],
+        "9": [
+          "PE/Health 9"
+        ],
+        "10": [
+          "PE 10 ST",
+          "PE 10 EX"
+        ]
+      },
+      "map_spaces": [
+        "PE 1"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Katelyn Dougherty",
+      "first_name": "Katelyn",
+      "last_name": "Dougherty",
+      "programmes_marked": [
+        "MYP",
+        "DP"
+      ],
+      "assignments_by_grade": {
+        "8": [
+          "Individuals & Societies 8"
+        ],
+        "9": [
+          "SH 9/10"
+        ],
+        "10": [
+          "Individuals & Societies 10",
+          "SH 9/10"
+        ],
+        "11": [
+          "DP History World",
+          "MUN"
+        ],
+        "12": [
+          "DP History Americas",
+          "MUN"
+        ]
+      },
+      "map_spaces": [
+        "Trupial"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Randy January",
+      "first_name": "Randy",
+      "last_name": "January",
+      "programmes_marked": [
+        "PYP"
+      ],
+      "assignments_by_grade": {
+        "7": [
+          "Mathematics 7A",
+          "Mathematics 7B"
+        ],
+        "8": [
+          "Mathematics 8"
+        ],
+        "9": [
+          "Mathematics 9"
+        ],
+        "10": [
+          "Mathematics 10 ST",
+          "Mathematics 10 EX"
+        ]
+      },
+      "map_spaces": [
+        "Room 10"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Kathelijne Cooiman",
+      "first_name": "Kathelijne",
+      "last_name": "Cooiman",
+      "programmes_marked": [
+        "PYP",
+        "MYP",
+        "DP"
+      ],
+      "assignments_by_grade": {
+        "PYP": [
+          "Dutch 5 Non-Native"
+        ],
+        "7": [
+          "Dutch LA 7A",
+          "SH 7A"
+        ],
+        "8": [
+          "Dutch LA"
+        ],
+        "9": [
+          "Dutch LL"
+        ],
+        "10": [
+          "Dutch LL"
+        ],
+        "11": [
+          "DP Dutch A Language & Literature"
+        ],
+        "12": [
+          "DP Dutch A Language & Literature"
+        ]
+      },
+      "map_spaces": [],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Elsa LeGrand",
+      "first_name": "Elsa",
+      "last_name": "LeGrand",
+      "programmes_marked": [
+        "PYP"
+      ],
+      "assignments_by_grade": {
+        "PYP": [
+          "Grade 3"
+        ]
+      },
+      "map_spaces": [
+        "Grade 3"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Kavita Chugani",
+      "first_name": "Kavita",
+      "last_name": "Chugani",
+      "programmes_marked": [
+        "MYP"
+      ],
+      "assignments_by_grade": {
+        "6": [
+          "Science 6",
+          "Mathematics 6"
+        ],
+        "7": [
+          "Science 7"
+        ],
+        "8": [
+          "Science 8"
+        ],
+        "9": [
+          "Biology 9"
+        ]
+      },
+      "map_spaces": [
+        "Mendeleev Lab"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Kelli Sluder",
+      "first_name": "Kelli",
+      "last_name": "Sluder",
+      "programmes_marked": [
+        "PYP",
+        "MYP"
+      ],
+      "assignments_by_grade": {
+        "PYP": [
+          "PYP Art K–5"
+        ],
+        "6": [
+          "Art 6"
+        ],
+        "7": [
+          "Design 7A",
+          "Design 7B"
+        ],
+        "8": [
+          "Art 8"
+        ],
+        "9": [
+          "Design 9",
+          "SH 9/10"
+        ],
+        "10": [
+          "Art 10",
+          "SH 9/10"
+        ]
+      },
+      "map_spaces": [],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Marie-Kély Pinedoe",
+      "first_name": "Marie-Kély",
+      "last_name": "Pinedoe",
+      "programmes_marked": [
+        "PYP",
+        "MYP"
+      ],
+      "assignments_by_grade": {
+        "PYP": [
+          "PYP Dutch 2–4"
+        ],
+        "6": [
+          "Dutch LA 6"
+        ],
+        "7": [
+          "Dutch LL 7"
+        ],
+        "9": [
+          "Dutch LA 9"
+        ],
+        "10": [
+          "Dutch LA 10"
+        ]
+      },
+      "map_spaces": [],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Mario Sosa",
+      "first_name": "Mario",
+      "last_name": "Sosa",
+      "programmes_marked": [
+        "PYP",
+        "MYP",
+        "DP"
+      ],
+      "assignments_by_grade": {
+        "PYP": [
+          "PYP Violin K4/5"
+        ],
+        "6": [
+          "Orchestra 6",
+          "SH 6/8"
+        ],
+        "7": [
+          "Orchestra 7"
+        ],
+        "8": [
+          "Orchestra 8",
+          "SH 6/8"
+        ],
+        "9": [
+          "Orchestra 9/10"
+        ],
+        "10": [
+          "Orchestra 9/10"
+        ],
+        "11": [
+          "DP Business Management",
+          "High School Band"
+        ],
+        "12": [
+          "DP Business Management",
+          "High School Band"
+        ]
+      },
+      "map_spaces": [
+        "Room 11"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Valerie Riberio",
+      "first_name": "Valerie",
+      "last_name": "Riberio",
+      "programmes_marked": [],
+      "assignments_by_grade": {},
+      "map_spaces": [
+        "Accounts"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Raoul Rigaud",
+      "first_name": "Raoul",
+      "last_name": "Rigaud",
+      "programmes_marked": [],
+      "assignments_by_grade": {},
+      "map_spaces": [
+        "HR Files"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Iviana Rimon",
+      "first_name": "Iviana",
+      "last_name": "Rimon",
+      "programmes_marked": [
+        "PYP"
+      ],
+      "assignments_by_grade": {},
+      "map_spaces": [],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Ivonne Rimon",
+      "first_name": "Ivonne",
+      "last_name": "Rimon",
+      "programmes_marked": [],
+      "assignments_by_grade": {},
+      "map_spaces": [
+        "Secondary Office"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Mery de la Cruz",
+      "first_name": "Mery",
+      "last_name": "de la Cruz",
+      "programmes_marked": [
+        "MYP",
+        "DP"
+      ],
+      "assignments_by_grade": {
+        "10": [
+          "Science 10"
+        ],
+        "11": [
+          "DP Chemistry",
+          "DP Biology"
+        ],
+        "12": [
+          "DP Chemistry",
+          "DP Biology"
+        ]
+      },
+      "map_spaces": [
+        "Room 9"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Dareen Shehab",
+      "first_name": "Dareen",
+      "last_name": "Shehab",
+      "programmes_marked": [
+        "PYP"
+      ],
+      "assignments_by_grade": {
+        "PYP": [
+          "Grade 5"
+        ]
+      },
+      "map_spaces": [
+        "Grade 5"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Nina Kommeroh",
+      "first_name": "Nina",
+      "last_name": "Kommeroh",
+      "programmes_marked": [
+        "PYP"
+      ],
+      "assignments_by_grade": {
+        "PYP": [
+          "K3–5"
+        ]
+      },
+      "map_spaces": [
+        "K4–K5"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Jared Snyder",
+      "first_name": "Jared",
+      "last_name": "Snyder",
+      "programmes_marked": [
+        "DP"
+      ],
+      "assignments_by_grade": {
+        "11": [
+          "DP Physics",
+          "DP Mathematics Analysis",
+          "DP Mathematics Applications"
+        ],
+        "12": [
+          "DP Physics",
+          "DP Mathematics Analysis",
+          "DP Mathematics Applications"
+        ]
+      },
+      "map_spaces": [
+        "Einstein Lab"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Sandra Guerrero",
+      "first_name": "Sandra",
+      "last_name": "Guerrero",
+      "programmes_marked": [
+        "MYP",
+        "DP"
+      ],
+      "assignments_by_grade": {
+        "PYP": [
+          "PYP Spanish 5"
+        ],
+        "7": [
+          "Spanish 7 II"
+        ],
+        "8": [
+          "Spanish 8 III"
+        ],
+        "9": [
+          "Spanish 9 IV / Intro to Literature LL"
+        ],
+        "10": [
+          "Intro to Literature LL 9/10"
+        ],
+        "11": [
+          "DP Spanish B Language Acquisition"
+        ],
+        "12": [
+          "DP Spanish B Language Acquisition"
+        ]
+      },
+      "map_spaces": [],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Sara Susanna",
+      "first_name": "Sara",
+      "last_name": "Susanna",
+      "programmes_marked": [
+        "PYP"
+      ],
+      "assignments_by_grade": {
+        "PYP": [
+          "Grade 1"
+        ]
+      },
+      "map_spaces": [
+        "Grade 1"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Shruti Tekwani",
+      "first_name": "Shruti",
+      "last_name": "Tekwani",
+      "programmes_marked": [
+        "MYP"
+      ],
+      "assignments_by_grade": {
+        "6": [
+          "Advisory 6"
+        ],
+        "7": [
+          "Advisory 7A",
+          "Advisory 7B"
+        ],
+        "8": [
+          "Advisory 8"
+        ]
+      },
+      "map_spaces": [],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Tristano Tjon-a-Koy",
+      "first_name": "Tristano",
+      "last_name": "Tjon-a-Koy",
+      "programmes_marked": [],
+      "assignments_by_grade": {
+        "PYP": [
+          "PYP PE K–5"
+        ]
+      },
+      "map_spaces": [
+        "PE 2"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Anouk van Eerdewijk",
+      "first_name": "Anouk",
+      "last_name": "van Eerdewijk",
+      "programmes_marked": [],
+      "assignments_by_grade": {},
+      "map_spaces": [
+        "Health Center"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Jennifer van Grieken",
+      "first_name": "Jennifer",
+      "last_name": "van Grieken",
+      "programmes_marked": [],
+      "assignments_by_grade": {},
+      "map_spaces": [],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    },
+    {
+      "name": "Ulises Franco",
+      "first_name": "Ulises",
+      "last_name": "Franco",
+      "programmes_marked": [
+        "MYP"
+      ],
+      "assignments_by_grade": {},
+      "map_spaces": [
+        "MS&HS Principal"
+      ],
+      "source": "ISC roster screenshot provided Oct 23 2026"
+    }
+  ]
+}
