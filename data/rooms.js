@@ -1,7 +1,6 @@
-/* Room positions use a 917 × 679 viewBox matching assets/campus-map-2026-2027.png.
-   All assigned staff names are transcribed from the supplied diagram and must be checked.
-   Photos and staff biographies must be approved by ISC before publication.
-   droneRect uses [x, y, width, height] with coordinates relative to 1000 × 1000 normalized area. */
+/* ISC Campus Explorer — interactive room geometry calibrated for 1672 x 941 supplied campus map.
+   All room assignments and email-address formats require verification before publication.
+   See roster and QA notes. */
 window.ISC_CONFIG = {
   "siteName": "International School of Curaçao",
   "tagline": "Learning for Global Citizenship",
@@ -19,7 +18,528 @@ window.ISC_CONFIG = {
   "showStaffNames": true,
   "showAdminPreviewNotice": true
 };
-
+window.ISC_STAFF = [
+  {
+    "name": "Ana Arboleda",
+    "email": "arboledaa@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/anaarboleda.webp",
+    "roles": {},
+    "pyp": false,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "Main Office"
+  },
+  {
+    "name": "Halimeh Al Ayoubi",
+    "email": "alayoubih@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/halimehalayoubi.webp",
+    "roles": {
+      "ES / PYP": "Grade 4"
+    },
+    "pyp": true,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "Grade 4"
+  },
+  {
+    "name": "Aftan Schoonen",
+    "email": "schoonena@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/aftanschoonen.webp",
+    "roles": {
+      "ES / PYP": "Media",
+      "Grade 6": "Learning Resource",
+      "Grade 7": "Learning Resource",
+      "Grade 8": "Learning Resource",
+      "Grade 9": "Learning Resource 9/10",
+      "Grade 10": "Learning Resource 9/10"
+    },
+    "pyp": true,
+    "myp": true,
+    "dp": false,
+    "mapSpaces": "Media Center"
+  },
+  {
+    "name": "Allison Ische",
+    "email": "ischea@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/allisonische.webp",
+    "roles": {
+      "ES / PYP": "Grade 2"
+    },
+    "pyp": true,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "Grade 2"
+  },
+  {
+    "name": "Allison Violenes",
+    "email": "violenesa@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/allisonviolenes.webp",
+    "roles": {
+      "ES / PYP": "Music",
+      "Grade 6": "Choir 6",
+      "Grade 7": "Choir 7",
+      "Grade 8": "Choir 8",
+      "Grade 9": "High School Choir",
+      "Grade 10": "High School Choir"
+    },
+    "pyp": true,
+    "myp": true,
+    "dp": false,
+    "mapSpaces": "Music Room"
+  },
+  {
+    "name": "Babette de Waele",
+    "email": "dewaeleb@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/babettedewaele.webp",
+    "roles": {
+      "Grade 6": "Design 6",
+      "Grade 7": "Art 7A/B",
+      "Grade 8": "Design 8; SH 8",
+      "Grade 9": "Art 9",
+      "Grade 10": "Design 10",
+      "Grade 11": "DP Visual Arts",
+      "Grade 12": "DP Visual Arts"
+    },
+    "pyp": false,
+    "myp": true,
+    "dp": true,
+    "mapSpaces": "Picasso"
+  },
+  {
+    "name": "Diana Melfor",
+    "email": "melford@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/dianamelfor.webp",
+    "roles": {},
+    "pyp": true,
+    "myp": true,
+    "dp": false,
+    "mapSpaces": "Staff Room / SS2; Elementary Coordinator"
+  },
+  {
+    "name": "Douglas Vaughan",
+    "email": "vaughand@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/douglasvaughan.webp",
+    "roles": {},
+    "pyp": true,
+    "myp": true,
+    "dp": false,
+    "mapSpaces": "Admissions Conference Room"
+  },
+  {
+    "name": "Goumana El-Hage",
+    "email": "elhageg@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/goumanaelhage.webp",
+    "roles": {
+      "Grade 6": "Individuals & Societies 6",
+      "Grade 7": "Individuals & Societies 7",
+      "Grade 9": "Individuals & Societies 9; PPA",
+      "Grade 10": "PPA",
+      "Grade 11": "CAS",
+      "Grade 12": "CAS"
+    },
+    "pyp": false,
+    "myp": true,
+    "dp": false,
+    "mapSpaces": "Kala"
+  },
+  {
+    "name": "Hanadi El Hajj",
+    "email": "elhajjh@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/hanadielhajj.webp",
+    "roles": {
+      "Grade 6": "English 6; SH 6/8",
+      "Grade 7": "English 7A; English 7B",
+      "Grade 8": "English 8",
+      "Grade 9": "English 9; SH 6/8",
+      "Grade 10": "English 9"
+    },
+    "pyp": false,
+    "myp": true,
+    "dp": false,
+    "mapSpaces": "Chuchubi"
+  },
+  {
+    "name": "Jessica Chang",
+    "email": "changj@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/jessicachang.webp",
+    "roles": {
+      "Grade 10": "English 10",
+      "Grade 11": "DP English A Literature; DP English B; TOK 11",
+      "Grade 12": "DP English A Literature; DP English B; TOK 12"
+    },
+    "pyp": false,
+    "myp": true,
+    "dp": true,
+    "mapSpaces": "Lagadishi"
+  },
+  {
+    "name": "Angelica Galicia",
+    "email": "galiciaa@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/angelicagalicia.webp",
+    "roles": {},
+    "pyp": false,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "ICT Department"
+  },
+  {
+    "name": "Jos Nous",
+    "email": "nousj@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/josnous.webp",
+    "roles": {
+      "Grade 6": "PE 6",
+      "Grade 7": "PE 7A; PE 7B",
+      "Grade 8": "PE 8",
+      "Grade 9": "PE/Health 9",
+      "Grade 10": "PE 10 ST; PE 10 EX"
+    },
+    "pyp": false,
+    "myp": true,
+    "dp": false,
+    "mapSpaces": "PE 1"
+  },
+  {
+    "name": "Katelyn Dougherty",
+    "email": "doughertyk@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/katelyndougherty.webp",
+    "roles": {
+      "Grade 8": "Individuals & Societies 8",
+      "Grade 9": "SH 9/10",
+      "Grade 10": "Individuals & Societies 10; SH 9/10",
+      "Grade 11": "DP History World; MUN",
+      "Grade 12": "DP History Americas; MUN"
+    },
+    "pyp": false,
+    "myp": true,
+    "dp": true,
+    "mapSpaces": "Trupial"
+  },
+  {
+    "name": "Randy January",
+    "email": "januaryr@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/randyjanuary.webp",
+    "roles": {
+      "Grade 7": "Mathematics 7A; Mathematics 7B",
+      "Grade 8": "Mathematics 8",
+      "Grade 9": "Mathematics 9",
+      "Grade 10": "Mathematics 10 ST; Mathematics 10 EX"
+    },
+    "pyp": true,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "Room 10"
+  },
+  {
+    "name": "Kathelijne Cooiman",
+    "email": "cooimank@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/kathelijnecooiman.webp",
+    "roles": {
+      "ES / PYP": "Dutch 5 Non-Native",
+      "Grade 7": "Dutch LA 7A; SH 7A",
+      "Grade 8": "Dutch LA",
+      "Grade 9": "Dutch LL",
+      "Grade 10": "Dutch LL",
+      "Grade 11": "DP Dutch A Language & Literature",
+      "Grade 12": "DP Dutch A Language & Literature"
+    },
+    "pyp": true,
+    "myp": true,
+    "dp": true,
+    "mapSpaces": ""
+  },
+  {
+    "name": "Elsa LeGrand",
+    "email": "legrande@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/elsalegrand.webp",
+    "roles": {
+      "ES / PYP": "Grade 3"
+    },
+    "pyp": true,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "Grade 3"
+  },
+  {
+    "name": "Kavita Chugani",
+    "email": "chuganik@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/kavitachugani.webp",
+    "roles": {
+      "Grade 6": "Science 6; Mathematics 6",
+      "Grade 7": "Science 7",
+      "Grade 8": "Science 8",
+      "Grade 9": "Biology 9"
+    },
+    "pyp": false,
+    "myp": true,
+    "dp": false,
+    "mapSpaces": "Mendeleev Lab"
+  },
+  {
+    "name": "Kelli Sluder",
+    "email": "sluderk@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/kellisluder.webp",
+    "roles": {
+      "ES / PYP": "PYP Art K–5",
+      "Grade 6": "Art 6",
+      "Grade 7": "Design 7A; Design 7B",
+      "Grade 8": "Art 8",
+      "Grade 9": "Design 9; SH 9/10",
+      "Grade 10": "Art 10; SH 9/10"
+    },
+    "pyp": true,
+    "myp": true,
+    "dp": false,
+    "mapSpaces": ""
+  },
+  {
+    "name": "Marie-Kély Pinedoe",
+    "email": "pinedoem@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/mariekelypinedoe.webp",
+    "roles": {
+      "ES / PYP": "PYP Dutch 2–4",
+      "Grade 6": "Dutch LA 6",
+      "Grade 7": "Dutch LL 7",
+      "Grade 9": "Dutch LA 9",
+      "Grade 10": "Dutch LA 10"
+    },
+    "pyp": true,
+    "myp": true,
+    "dp": false,
+    "mapSpaces": ""
+  },
+  {
+    "name": "Mario Sosa",
+    "email": "sosam@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/mariososa.webp",
+    "roles": {
+      "ES / PYP": "PYP Violin K4/5",
+      "Grade 6": "Orchestra 6; SH 6/8",
+      "Grade 7": "Orchestra 7",
+      "Grade 8": "Orchestra 8; SH 6/8",
+      "Grade 9": "Orchestra 9/10",
+      "Grade 10": "Orchestra 9/10",
+      "Grade 11": "DP Business Management; High School Band",
+      "Grade 12": "DP Business Management; High School Band"
+    },
+    "pyp": true,
+    "myp": true,
+    "dp": true,
+    "mapSpaces": "Room 11"
+  },
+  {
+    "name": "Valerie Riberio",
+    "email": "riberiov@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/valerieriberio.webp",
+    "roles": {},
+    "pyp": false,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "Accounts"
+  },
+  {
+    "name": "Raoul Rigaud",
+    "email": "rigaudr@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/raoulrigaud.webp",
+    "roles": {},
+    "pyp": false,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "HR Files"
+  },
+  {
+    "name": "Iviana Rimon",
+    "email": "rimoni@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/ivianarimon.webp",
+    "roles": {},
+    "pyp": true,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": ""
+  },
+  {
+    "name": "Ivonne Rimon",
+    "email": "rimoni@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/ivonnerimon.webp",
+    "roles": {},
+    "pyp": false,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "Secondary Office"
+  },
+  {
+    "name": "Mery de la Cruz",
+    "email": "delacruzm@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/merydelacruz.webp",
+    "roles": {
+      "Grade 10": "Science 10",
+      "Grade 11": "DP Chemistry; DP Biology",
+      "Grade 12": "DP Chemistry; DP Biology"
+    },
+    "pyp": false,
+    "myp": true,
+    "dp": true,
+    "mapSpaces": "Room 9"
+  },
+  {
+    "name": "Dareen Shehab",
+    "email": "shehabd@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/dareenshehab.webp",
+    "roles": {
+      "ES / PYP": "Grade 5"
+    },
+    "pyp": true,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "Grade 5"
+  },
+  {
+    "name": "Nina Kommeroh",
+    "email": "kommerohn@isc.cw",
+    "emailVerified": false,
+    "photo": "",
+    "roles": {
+      "ES / PYP": "K3–5"
+    },
+    "pyp": true,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "K4–K5"
+  },
+  {
+    "name": "Jared Snyder",
+    "email": "snyderj@isc.cw",
+    "emailVerified": true,
+    "photo": "assets/staff/jaredsnyder.webp",
+    "roles": {
+      "Grade 11": "DP Physics; DP Mathematics Analysis; DP Mathematics Applications",
+      "Grade 12": "DP Physics; DP Mathematics Analysis; DP Mathematics Applications"
+    },
+    "pyp": false,
+    "myp": false,
+    "dp": true,
+    "mapSpaces": "Einstein Lab"
+  },
+  {
+    "name": "Sandra Guerrero",
+    "email": "guerreros@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/sandraguerrero.webp",
+    "roles": {
+      "ES / PYP": "PYP Spanish 5",
+      "Grade 7": "Spanish 7 II",
+      "Grade 8": "Spanish 8 III",
+      "Grade 9": "Spanish 9 IV / Intro to Literature LL",
+      "Grade 10": "Intro to Literature LL 9/10",
+      "Grade 11": "DP Spanish B Language Acquisition",
+      "Grade 12": "DP Spanish B Language Acquisition"
+    },
+    "pyp": false,
+    "myp": true,
+    "dp": true,
+    "mapSpaces": ""
+  },
+  {
+    "name": "Sara Susanna",
+    "email": "susannas@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/sarasusanna.webp",
+    "roles": {
+      "ES / PYP": "Grade 1"
+    },
+    "pyp": true,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "Grade 1"
+  },
+  {
+    "name": "Shruti Tekwani",
+    "email": "tekwanis@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/shrutitekwani.webp",
+    "roles": {
+      "Grade 6": "Advisory 6",
+      "Grade 7": "Advisory 7A; Advisory 7B",
+      "Grade 8": "Advisory 8"
+    },
+    "pyp": false,
+    "myp": true,
+    "dp": false,
+    "mapSpaces": ""
+  },
+  {
+    "name": "Tristano Tjon-a-Koy",
+    "email": "tjonakoyt@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/tristanotjonakoy.webp",
+    "roles": {
+      "ES / PYP": "PYP PE K–5"
+    },
+    "pyp": false,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "PE 2"
+  },
+  {
+    "name": "Anouk van Eerdewijk",
+    "email": "vaneerdewijka@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/anoukvaneerdewijk.webp",
+    "roles": {},
+    "pyp": false,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": "Health Center"
+  },
+  {
+    "name": "Jennifer van Grieken",
+    "email": "vangriekenj@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/jennifervangrieken.webp",
+    "roles": {},
+    "pyp": false,
+    "myp": false,
+    "dp": false,
+    "mapSpaces": ""
+  },
+  {
+    "name": "Ulises Franco",
+    "email": "francou@isc.cw",
+    "emailVerified": false,
+    "photo": "assets/staff/ulisesfranco.webp",
+    "roles": {},
+    "pyp": false,
+    "myp": true,
+    "dp": false,
+    "mapSpaces": "MS&HS Principal"
+  }
+];
 window.ISC_ROOMS = [
   {
     "id": "kolibri",
@@ -27,10 +547,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "North campus",
     "rect": [
-      27,
-      50,
-      85,
-      35
+      83,
+      54,
+      147,
+      54
     ],
     "teacher": "",
     "featured": false,
@@ -40,7 +560,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "kadushi",
@@ -48,10 +573,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "North campus",
     "rect": [
-      27,
-      85,
-      85,
-      36
+      83,
+      108,
+      147,
+      55
     ],
     "teacher": "",
     "featured": false,
@@ -61,7 +586,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "lagadishi",
@@ -69,20 +599,29 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "North campus",
     "rect": [
-      27,
-      121,
-      85,
-      37
+      83,
+      163,
+      147,
+      55
     ],
     "teacher": "Jessica Chang",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "DP English A Literature; DP English B; English 10; TOK 11; TOK 12",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Jessica Chang",
+    "staffPhoto": "assets/staff/jessicachang.webp",
+    "staffEmail": "changj@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "Grade 10": "English 10",
+      "Grade 11": "DP English A Literature; DP English B; TOK 11",
+      "Grade 12": "DP English A Literature; DP English B; TOK 12"
+    }
   },
   {
     "id": "trupial",
@@ -90,20 +629,31 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "North campus",
     "rect": [
-      27,
-      158,
-      85,
-      36
+      83,
+      218,
+      147,
+      52
     ],
     "teacher": "Katelyn Dougherty",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "DP History Americas; DP History World; Individuals & Societies 10; Individuals & Societies 8; MUN; SH 9/10",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Katelyn Dougherty",
+    "staffPhoto": "assets/staff/katelyndougherty.webp",
+    "staffEmail": "doughertyk@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "Grade 8": "Individuals & Societies 8",
+      "Grade 9": "SH 9/10",
+      "Grade 10": "Individuals & Societies 10; SH 9/10",
+      "Grade 11": "DP History World; MUN",
+      "Grade 12": "DP History Americas; MUN"
+    }
   },
   {
     "id": "chuchubi",
@@ -111,20 +661,31 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "North campus",
     "rect": [
-      27,
-      194,
-      85,
-      36
+      83,
+      270,
+      147,
+      54
     ],
-    "teacher": "",
+    "teacher": "Hanadi El Hajj",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "English 6; English 7A; English 7B; English 8; English 9; SH 6/8",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Hanadi El Hajj",
+    "staffPhoto": "assets/staff/hanadielhajj.webp",
+    "staffEmail": "elhajjh@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "Grade 6": "English 6; SH 6/8",
+      "Grade 7": "English 7A; English 7B",
+      "Grade 8": "English 8",
+      "Grade 9": "English 9; SH 6/8",
+      "Grade 10": "English 9"
+    }
   },
   {
     "id": "kala",
@@ -132,20 +693,32 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "North campus",
     "rect": [
-      27,
-      230,
-      85,
-      36
+      83,
+      324,
+      147,
+      55
     ],
-    "teacher": "",
+    "teacher": "Goumana El-Hage",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "CAS; Individuals & Societies 6; Individuals & Societies 7; Individuals & Societies 9; PPA",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Goumana El-Hage",
+    "staffPhoto": "assets/staff/goumanaelhage.webp",
+    "staffEmail": "elhageg@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "Grade 6": "Individuals & Societies 6",
+      "Grade 7": "Individuals & Societies 7",
+      "Grade 9": "Individuals & Societies 9; PPA",
+      "Grade 10": "PPA",
+      "Grade 11": "CAS",
+      "Grade 12": "CAS"
+    }
   },
   {
     "id": "north-restroom",
@@ -153,10 +726,10 @@ window.ISC_ROOMS = [
     "category": "Facilities",
     "zone": "North campus",
     "rect": [
-      119,
-      57,
-      79,
-      62
+      265,
+      77,
+      100,
+      53
     ],
     "teacher": "",
     "featured": false,
@@ -166,18 +739,23 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "north-seating",
-    "name": "North seating area",
+    "name": "Covered Seating Area 1",
     "category": "Shared spaces",
     "zone": "North campus",
     "rect": [
-      120,
-      135,
-      76,
-      35
+      251,
+      162,
+      137,
+      96
     ],
     "teacher": "",
     "featured": false,
@@ -187,7 +765,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "ms-hs-principal",
@@ -195,10 +778,10 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "North campus",
     "rect": [
-      119,
-      178,
-      76,
-      52
+      237,
+      258,
+      153,
+      66
     ],
     "teacher": "Ulises Franco",
     "featured": false,
@@ -208,7 +791,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Ulises Franco",
+    "staffPhoto": "assets/staff/ulisesfranco.webp",
+    "staffEmail": "francou@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "north-faculty",
@@ -216,10 +804,10 @@ window.ISC_ROOMS = [
     "category": "Staff spaces",
     "zone": "North campus",
     "rect": [
-      119,
-      242,
-      77,
-      23
+      237,
+      324,
+      153,
+      57
     ],
     "teacher": "",
     "featured": false,
@@ -229,18 +817,23 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "north-courtyard",
-    "name": "North courtyard",
+    "name": "Grassy Courtyard",
     "category": "Shared spaces",
     "zone": "North campus",
     "rect": [
-      225,
-      143,
-      158,
-      91
+      430,
+      163,
+      244,
+      147
     ],
     "teacher": "",
     "featured": false,
@@ -250,7 +843,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "legacy-theater",
@@ -258,10 +856,10 @@ window.ISC_ROOMS = [
     "category": "Arts & performance",
     "zone": "North campus",
     "rect": [
-      248,
-      254,
-      77,
-      43
+      451,
+      343,
+      145,
+      61
     ],
     "teacher": "",
     "featured": true,
@@ -271,7 +869,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "room-9",
@@ -279,20 +882,29 @@ window.ISC_ROOMS = [
     "category": "Middle & high classrooms",
     "zone": "North campus",
     "rect": [
-      325,
-      254,
-      74,
-      43
+      596,
+      343,
+      130,
+      61
     ],
-    "teacher": "",
+    "teacher": "Mery de la Cruz",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "DP Biology; DP Chemistry; Science 10",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Mery de la Cruz",
+    "staffPhoto": "assets/staff/merydelacruz.webp",
+    "staffEmail": "delacruzm@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "Grade 10": "Science 10",
+      "Grade 11": "DP Chemistry; DP Biology",
+      "Grade 12": "DP Chemistry; DP Biology"
+    }
   },
   {
     "id": "room-10",
@@ -300,20 +912,30 @@ window.ISC_ROOMS = [
     "category": "Middle & high classrooms",
     "zone": "North campus",
     "rect": [
-      399,
-      254,
-      76,
-      43
+      726,
+      343,
+      134,
+      61
     ],
     "teacher": "Randy January",
     "featured": true,
     "description": "",
-    "subject": "",
+    "subject": "Mathematics 10 EX; Mathematics 10 ST; Mathematics 7A; Mathematics 7B; Mathematics 8; Mathematics 9",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Randy January",
+    "staffPhoto": "assets/staff/randyjanuary.webp",
+    "staffEmail": "januaryr@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "Grade 7": "Mathematics 7A; Mathematics 7B",
+      "Grade 8": "Mathematics 8",
+      "Grade 9": "Mathematics 9",
+      "Grade 10": "Mathematics 10 ST; Mathematics 10 EX"
+    }
   },
   {
     "id": "room-11",
@@ -321,20 +943,34 @@ window.ISC_ROOMS = [
     "category": "Middle & high classrooms",
     "zone": "North campus",
     "rect": [
-      475,
-      254,
-      77,
-      43
+      860,
+      343,
+      129,
+      61
     ],
     "teacher": "Mario Sosa",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "DP Business Management; High School Band; Orchestra 6; Orchestra 7; Orchestra 8; Orchestra 9/10; PYP Violin K4/5; SH 6/8",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Mario Sosa",
+    "staffPhoto": "assets/staff/mariososa.webp",
+    "staffEmail": "sosam@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "ES / PYP": "PYP Violin K4/5",
+      "Grade 6": "Orchestra 6; SH 6/8",
+      "Grade 7": "Orchestra 7",
+      "Grade 8": "Orchestra 8; SH 6/8",
+      "Grade 9": "Orchestra 9/10",
+      "Grade 10": "Orchestra 9/10",
+      "Grade 11": "DP Business Management; High School Band",
+      "Grade 12": "DP Business Management; High School Band"
+    }
   },
   {
     "id": "secondary-office",
@@ -342,12 +978,12 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "North campus",
     "rect": [
-      674,
-      254,
-      71,
-      43
+      1121,
+      354,
+      145,
+      66
     ],
-    "teacher": "",
+    "teacher": "Ivonne Rimon",
     "featured": false,
     "description": "",
     "subject": "",
@@ -355,7 +991,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Ivonne Rimon",
+    "staffPhoto": "assets/staff/ivonnerimon.webp",
+    "staffEmail": "rimoni@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "einstein-lab",
@@ -363,20 +1004,28 @@ window.ISC_ROOMS = [
     "category": "Science labs",
     "zone": "North campus",
     "rect": [
-      745,
-      254,
-      81,
-      43
+      1267,
+      354,
+      164,
+      67
     ],
     "teacher": "Jared Snyder",
     "featured": true,
     "description": "Science laboratory on the north side of Koninginnelaan.",
-    "subject": "",
+    "subject": "DP Mathematics Analysis; DP Mathematics Applications; DP Physics",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Jared Snyder",
+    "staffPhoto": "assets/staff/jaredsnyder.webp",
+    "staffEmail": "snyderj@isc.cw",
+    "staffEmailVerified": true,
+    "staffCourses": {
+      "Grade 11": "DP Physics; DP Mathematics Analysis; DP Mathematics Applications",
+      "Grade 12": "DP Physics; DP Mathematics Analysis; DP Mathematics Applications"
+    }
   },
   {
     "id": "mendeleev-lab",
@@ -384,31 +1033,41 @@ window.ISC_ROOMS = [
     "category": "Science labs",
     "zone": "North campus",
     "rect": [
-      826,
-      254,
-      83,
-      43
+      1431,
+      354,
+      157,
+      67
     ],
     "teacher": "Kavita Chugani",
     "featured": true,
     "description": "Science laboratory on the north side of Koninginnelaan.",
-    "subject": "",
+    "subject": "Biology 9; Mathematics 6; Science 6; Science 7; Science 8",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Kavita Chugani",
+    "staffPhoto": "assets/staff/kavitachugani.webp",
+    "staffEmail": "chuganik@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "Grade 6": "Science 6; Mathematics 6",
+      "Grade 7": "Science 7",
+      "Grade 8": "Science 8",
+      "Grade 9": "Biology 9"
+    }
   },
   {
     "id": "north-garden",
-    "name": "North garden",
+    "name": "MS/HS Covered Lunch Shelter",
     "category": "Shared spaces",
     "zone": "North campus",
     "rect": [
-      440,
-      98,
-      237,
-      78
+      399,
+      145,
+      340,
+      201
     ],
     "teacher": "",
     "featured": false,
@@ -418,18 +1077,23 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "north-outdoor-seating",
-    "name": "Outdoor seating — North",
+    "name": "MS/HS Lunch Area",
     "category": "Shared spaces",
     "zone": "North campus",
     "rect": [
-      683,
-      159,
-      99,
-      68
+      954,
+      190,
+      346,
+      158
     ],
     "teacher": "",
     "featured": false,
@@ -439,49 +1103,72 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "pe-1",
-    "name": "PE 1",
+    "name": "P.E. 1",
     "category": "Sports & recreation",
     "zone": "North campus",
     "rect": [
-      749,
-      14,
-      57,
-      27
+      1309,
+      86,
+      99,
+      49
     ],
-    "teacher": "",
+    "teacher": "Jos Nous",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "PE 10 EX; PE 10 ST; PE 6; PE 7A; PE 7B; PE 8; PE/Health 9",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Jos Nous",
+    "staffPhoto": "assets/staff/josnous.webp",
+    "staffEmail": "nousj@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "Grade 6": "PE 6",
+      "Grade 7": "PE 7A; PE 7B",
+      "Grade 8": "PE 8",
+      "Grade 9": "PE/Health 9",
+      "Grade 10": "PE 10 ST; PE 10 EX"
+    }
   },
   {
     "id": "pe-2",
-    "name": "PE 2",
+    "name": "P.E. 2",
     "category": "Sports & recreation",
     "zone": "North campus",
     "rect": [
-      850,
-      14,
-      59,
-      27
+      1472,
+      86,
+      111,
+      49
     ],
-    "teacher": "",
+    "teacher": "Tristano Tjon-a-Koy",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "PYP PE K–5",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Tristano Tjon-a-Koy",
+    "staffPhoto": "assets/staff/tristanotjonakoy.webp",
+    "staffEmail": "tjonakoyt@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "ES / PYP": "PYP PE K–5"
+    }
   },
   {
     "id": "gym",
@@ -489,10 +1176,10 @@ window.ISC_ROOMS = [
     "category": "Sports & recreation",
     "zone": "North campus",
     "rect": [
-      749,
-      43,
-      160,
-      77
+      1309,
+      135,
+      275,
+      107
     ],
     "teacher": "",
     "featured": true,
@@ -502,7 +1189,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "picasso",
@@ -510,20 +1202,33 @@ window.ISC_ROOMS = [
     "category": "Arts & performance",
     "zone": "North campus",
     "rect": [
-      821,
-      160,
-      88,
-      68
+      1393,
+      265,
+      194,
+      80
     ],
-    "teacher": "Babette De Waele",
+    "teacher": "Babette de Waele",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "Art 7A/B; Art 9; DP Visual Arts; Design 10; Design 6; Design 8; SH 8",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Babette de Waele",
+    "staffPhoto": "assets/staff/babettedewaele.webp",
+    "staffEmail": "dewaeleb@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "Grade 6": "Design 6",
+      "Grade 7": "Art 7A/B",
+      "Grade 8": "Design 8; SH 8",
+      "Grade 9": "Art 9",
+      "Grade 10": "Design 10",
+      "Grade 11": "DP Visual Arts",
+      "Grade 12": "DP Visual Arts"
+    }
   },
   {
     "id": "k4-k5",
@@ -531,20 +1236,27 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      81,
-      369,
-      76,
-      68
+      177,
+      518,
+      136,
+      62
     ],
-    "teacher": "Nina Komen",
+    "teacher": "Nina Kommeroh",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "K3–5",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Nina Kommeroh",
+    "staffPhoto": "",
+    "staffEmail": "kommerohn@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "ES / PYP": "K3–5"
+    }
   },
   {
     "id": "music-room",
@@ -552,20 +1264,32 @@ window.ISC_ROOMS = [
     "category": "Arts & performance",
     "zone": "South campus",
     "rect": [
-      81,
-      437,
-      76,
-      47
+      177,
+      580,
+      136,
+      66
     ],
-    "teacher": "Alison Vickens",
+    "teacher": "Allison Violenes",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "Choir 6; Choir 7; Choir 8; High School Choir; Music",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Allison Violenes",
+    "staffPhoto": "assets/staff/allisonviolenes.webp",
+    "staffEmail": "violenesa@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "ES / PYP": "Music",
+      "Grade 6": "Choir 6",
+      "Grade 7": "Choir 7",
+      "Grade 8": "Choir 8",
+      "Grade 9": "High School Choir",
+      "Grade 10": "High School Choir"
+    }
   },
   {
     "id": "music-storage",
@@ -573,10 +1297,10 @@ window.ISC_ROOMS = [
     "category": "Facilities",
     "zone": "South campus",
     "rect": [
-      81,
-      485,
-      76,
-      45
+      177,
+      646,
+      136,
+      53
     ],
     "teacher": "",
     "featured": false,
@@ -586,7 +1310,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "south-staff",
@@ -594,12 +1323,12 @@ window.ISC_ROOMS = [
     "category": "Staff spaces",
     "zone": "South campus",
     "rect": [
-      81,
-      532,
-      76,
-      17
+      177,
+      699,
+      136,
+      58
     ],
-    "teacher": "",
+    "teacher": "Diana Melfor",
     "featured": false,
     "description": "",
     "subject": "",
@@ -607,7 +1336,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Diana Melfor",
+    "staffPhoto": "assets/staff/dianamelfor.webp",
+    "staffEmail": "melford@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "monet",
@@ -615,10 +1349,10 @@ window.ISC_ROOMS = [
     "category": "Arts & performance",
     "zone": "South campus",
     "rect": [
-      5,
-      592,
-      35,
-      51
+      49,
+      795,
+      58,
+      80
     ],
     "teacher": "",
     "featured": false,
@@ -628,7 +1362,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "room-3",
@@ -636,20 +1375,27 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      84,
-      618,
-      53,
-      42
+      115,
+      802,
+      101,
+      67
     ],
     "teacher": "Elsa LeGrand",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "Grade 3",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Elsa LeGrand",
+    "staffPhoto": "assets/staff/elsalegrand.webp",
+    "staffEmail": "legrande@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "ES / PYP": "Grade 3"
+    }
   },
   {
     "id": "room-2",
@@ -657,20 +1403,27 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      137,
-      618,
-      52,
-      42
+      216,
+      802,
+      94,
+      67
     ],
-    "teacher": "Alison Iskie",
+    "teacher": "Allison Ische",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "Grade 2",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Allison Ische",
+    "staffPhoto": "assets/staff/allisonische.webp",
+    "staffEmail": "ischea@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "ES / PYP": "Grade 2"
+    }
   },
   {
     "id": "room-1",
@@ -678,20 +1431,27 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      189,
-      618,
-      53,
-      42
+      310,
+      802,
+      93,
+      67
     ],
-    "teacher": "",
+    "teacher": "Sara Susanna",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "Grade 1",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Sara Susanna",
+    "staffPhoto": "assets/staff/sarasusanna.webp",
+    "staffEmail": "susannas@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "ES / PYP": "Grade 1"
+    }
   },
   {
     "id": "es-restroom",
@@ -699,10 +1459,10 @@ window.ISC_ROOMS = [
     "category": "Facilities",
     "zone": "South campus",
     "rect": [
-      258,
-      337,
-      54,
-      49
+      488,
+      520,
+      134,
+      62
     ],
     "teacher": "",
     "featured": false,
@@ -712,7 +1472,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "es-cafeteria",
@@ -720,10 +1485,10 @@ window.ISC_ROOMS = [
     "category": "Shared spaces",
     "zone": "South campus",
     "rect": [
-      258,
-      386,
-      54,
-      45
+      492,
+      586,
+      194,
+      53
     ],
     "teacher": "",
     "featured": false,
@@ -733,7 +1498,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "room-4",
@@ -741,20 +1511,27 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      385,
-      337,
-      65,
-      49
+      726,
+      522,
+      106,
+      61
     ],
-    "teacher": "Halimeh Ayoubi",
+    "teacher": "Halimeh Al Ayoubi",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "Grade 4",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Halimeh Al Ayoubi",
+    "staffPhoto": "assets/staff/halimehalayoubi.webp",
+    "staffEmail": "alayoubih@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "ES / PYP": "Grade 4"
+    }
   },
   {
     "id": "room-5",
@@ -762,31 +1539,38 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      450,
-      337,
-      66,
-      49
+      832,
+      522,
+      120,
+      61
     ],
     "teacher": "Dareen Shehab",
     "featured": false,
     "description": "",
-    "subject": "",
+    "subject": "Grade 5",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Dareen Shehab",
+    "staffPhoto": "assets/staff/dareenshehab.webp",
+    "staffEmail": "shehabd@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "ES / PYP": "Grade 5"
+    }
   },
   {
     "id": "covered-area",
-    "name": "Covered Area",
+    "name": "Elementary Covered Area",
     "category": "Shared spaces",
     "zone": "South campus",
     "rect": [
-      259,
-      431,
-      116,
-      125
+      493,
+      639,
+      190,
+      152
     ],
     "teacher": "",
     "featured": true,
@@ -796,7 +1580,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "health-center",
@@ -804,12 +1593,12 @@ window.ISC_ROOMS = [
     "category": "Student support",
     "zone": "South campus",
     "rect": [
-      375,
-      430,
-      44,
-      44
+      690,
+      623,
+      98,
+      67
     ],
-    "teacher": "",
+    "teacher": "Anouk van Eerdewijk",
     "featured": false,
     "description": "",
     "subject": "",
@@ -817,7 +1606,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Anouk van Eerdewijk",
+    "staffPhoto": "assets/staff/anoukvaneerdewijk.webp",
+    "staffEmail": "vaneerdewijka@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "ict-department",
@@ -825,12 +1619,12 @@ window.ISC_ROOMS = [
     "category": "Student support",
     "zone": "South campus",
     "rect": [
-      375,
-      475,
-      44,
-      81
+      691,
+      690,
+      97,
+      106
     ],
-    "teacher": "",
+    "teacher": "Angelica Galicia",
     "featured": false,
     "description": "",
     "subject": "",
@@ -838,7 +1632,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Angelica Galicia",
+    "staffPhoto": "assets/staff/angelicagalicia.webp",
+    "staffEmail": "galiciaa@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "media-center",
@@ -846,20 +1645,32 @@ window.ISC_ROOMS = [
     "category": "Student support",
     "zone": "South campus",
     "rect": [
-      419,
-      430,
-      103,
-      127
+      788,
+      623,
+      150,
+      171
     ],
-    "teacher": "",
+    "teacher": "Aftan Schoonen",
     "featured": true,
     "description": "The ISC Media Center and library space.",
-    "subject": "",
+    "subject": "Learning Resource; Learning Resource 9/10; Media",
     "photos": [],
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Aftan Schoonen",
+    "staffPhoto": "assets/staff/aftanschoonen.webp",
+    "staffEmail": "schoonena@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {
+      "ES / PYP": "Media",
+      "Grade 6": "Learning Resource",
+      "Grade 7": "Learning Resource",
+      "Grade 8": "Learning Resource",
+      "Grade 9": "Learning Resource 9/10",
+      "Grade 10": "Learning Resource 9/10"
+    }
   },
   {
     "id": "elementary-coordinator",
@@ -867,12 +1678,12 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "South campus",
     "rect": [
-      258,
-      557,
-      45,
-      41
+      501,
+      792,
+      97,
+      62
     ],
-    "teacher": "",
+    "teacher": "Diana Melfor",
     "featured": false,
     "description": "",
     "subject": "",
@@ -880,7 +1691,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Diana Melfor",
+    "staffPhoto": "assets/staff/dianamelfor.webp",
+    "staffEmail": "melford@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "makerspace",
@@ -888,10 +1704,10 @@ window.ISC_ROOMS = [
     "category": "Learning spaces",
     "zone": "South campus",
     "rect": [
-      304,
-      557,
-      72,
-      41
+      598,
+      792,
+      115,
+      62
     ],
     "teacher": "",
     "featured": true,
@@ -901,7 +1717,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "server-room",
@@ -909,9 +1730,9 @@ window.ISC_ROOMS = [
     "category": "Facilities",
     "zone": "South campus",
     "rect": [
-      376,
-      557,
-      43,
+      714,
+      792,
+      104,
       62
     ],
     "teacher": "",
@@ -922,7 +1743,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "chromebook-lab",
@@ -930,9 +1756,9 @@ window.ISC_ROOMS = [
     "category": "Learning spaces",
     "zone": "South campus",
     "rect": [
-      419,
-      557,
-      103,
+      818,
+      792,
+      113,
       62
     ],
     "teacher": "",
@@ -943,18 +1769,23 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "pe-court",
-    "name": "P.E. Court",
+    "name": "Elementary Asphalt Football Court",
     "category": "Sports & recreation",
     "zone": "South campus",
     "rect": [
-      533,
-      429,
-      269,
-      167
+      1025,
+      639,
+      352,
+      197
     ],
     "teacher": "",
     "featured": true,
@@ -964,7 +1795,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "main-office",
@@ -972,12 +1808,12 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "South campus",
     "rect": [
-      599,
-      337,
-      49,
-      49
+      1076,
+      527,
+      109,
+      55
     ],
-    "teacher": "",
+    "teacher": "Ana Arboleda",
     "featured": true,
     "description": "",
     "subject": "",
@@ -985,7 +1821,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Ana Arboleda",
+    "staffPhoto": "assets/staff/anaarboleda.webp",
+    "staffEmail": "arboledaa@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "accounts",
@@ -993,12 +1834,12 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "South campus",
     "rect": [
-      648,
-      337,
-      37,
-      23
+      1185,
+      527,
+      81,
+      55
     ],
-    "teacher": "",
+    "teacher": "Valerie Riberio",
     "featured": false,
     "description": "",
     "subject": "",
@@ -1006,7 +1847,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Valerie Riberio",
+    "staffPhoto": "assets/staff/valerieriberio.webp",
+    "staffEmail": "riberiov@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "admissions",
@@ -1014,12 +1860,12 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "South campus",
     "rect": [
-      685,
-      337,
-      43,
-      23
+      1266,
+      527,
+      75,
+      55
     ],
-    "teacher": "",
+    "teacher": "Douglas Vaughan",
     "featured": false,
     "description": "",
     "subject": "",
@@ -1027,7 +1873,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Douglas Vaughan",
+    "staffPhoto": "assets/staff/douglasvaughan.webp",
+    "staffEmail": "vaughand@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "director",
@@ -1035,12 +1886,12 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "South campus",
     "rect": [
-      685,
-      360,
-      43,
-      26
+      1266,
+      527,
+      75,
+      55
     ],
-    "teacher": "",
+    "teacher": "Douglas Vaughan",
     "featured": false,
     "description": "",
     "subject": "",
@@ -1048,7 +1899,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "Douglas Vaughan",
+    "staffPhoto": "assets/staff/douglasvaughan.webp",
+    "staffEmail": "vaughand@isc.cw",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "office-staff",
@@ -1056,10 +1912,10 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "South campus",
     "rect": [
-      728,
-      337,
-      60,
-      23
+      1341,
+      527,
+      73,
+      55
     ],
     "teacher": "",
     "featured": false,
@@ -1069,7 +1925,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "it-storage",
@@ -1077,10 +1938,10 @@ window.ISC_ROOMS = [
     "category": "Facilities",
     "zone": "South campus",
     "rect": [
-      851,
-      358,
-      58,
-      27
+      1498,
+      536,
+      99,
+      45
     ],
     "teacher": "",
     "featured": false,
@@ -1090,7 +1951,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "conference",
@@ -1098,10 +1964,10 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "South campus",
     "rect": [
-      851,
-      337,
-      58,
-      22
+      1498,
+      506,
+      99,
+      30
     ],
     "teacher": "",
     "featured": false,
@@ -1111,7 +1977,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "mindspace",
@@ -1119,10 +1990,10 @@ window.ISC_ROOMS = [
     "category": "Student support",
     "zone": "South campus",
     "rect": [
-      823,
-      404,
-      43,
-      67
+      1447,
+      595,
+      65,
+      86
     ],
     "teacher": "",
     "featured": false,
@@ -1132,7 +2003,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "dushi",
@@ -1140,10 +2016,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      823,
-      471,
-      43,
-      65
+      1447,
+      682,
+      65,
+      45
     ],
     "teacher": "",
     "featured": false,
@@ -1153,7 +2029,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "dividivi-2",
@@ -1161,30 +2042,9 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      823,
-      537,
-      43,
-      65
-    ],
-    "teacher": "",
-    "featured": false,
-    "description": "",
-    "subject": "",
-    "photos": [],
-    "panorama": "",
-    "streetViewUrl": "",
-    "webUrl": "",
-    "droneRect": null
-  },
-  {
-    "id": "dividivi-1",
-    "name": "Dividivi 1",
-    "category": "Elementary classroom",
-    "zone": "South campus",
-    "rect": [
-      823,
-      610,
-      78,
+      1447,
+      728,
+      65,
       48
     ],
     "teacher": "",
@@ -1195,7 +2055,38 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
+  },
+  {
+    "id": "dividivi-1",
+    "name": "Dividivi 1",
+    "category": "Elementary classroom",
+    "zone": "South campus",
+    "rect": [
+      1472,
+      783,
+      119,
+      58
+    ],
+    "teacher": "",
+    "featured": false,
+    "description": "",
+    "subject": "",
+    "photos": [],
+    "panorama": "",
+    "streetViewUrl": "",
+    "webUrl": "",
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "iguana-1",
@@ -1203,10 +2094,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      866,
-      404,
-      43,
-      67
+      1512,
+      595,
+      77,
+      41
     ],
     "teacher": "",
     "featured": false,
@@ -1216,7 +2107,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "iguana-2",
@@ -1224,10 +2120,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      866,
-      471,
-      43,
-      65
+      1512,
+      637,
+      77,
+      43
     ],
     "teacher": "",
     "featured": false,
@@ -1237,7 +2133,12 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   },
   {
     "id": "flamboyan",
@@ -1245,10 +2146,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      866,
-      537,
-      43,
-      65
+      1512,
+      680,
+      77,
+      95
     ],
     "teacher": "",
     "featured": false,
@@ -1258,6 +2159,11 @@ window.ISC_ROOMS = [
     "panorama": "",
     "streetViewUrl": "",
     "webUrl": "",
-    "droneRect": null
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
   }
 ];

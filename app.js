@@ -11,6 +11,7 @@
   const search = $('searchInput'), zone = $('zoneSelect'), category = $('categorySelect');
   const stage = $('mapCanvas'), mapTransform = $('mapTransform'), svg = $('roomOverlay');
   const droneSvg = $('droneOverlay');
+  if(config.schematicImage) document.querySelector('#schematicView .base-map').src = config.schematicImage;
 
   const h = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const isSafeLink = value => {
@@ -23,7 +24,7 @@
     const q = search.value.trim().toLocaleLowerCase();
     return rooms.filter(r => (zone.value === 'all' || r.zone === zone.value)
       && (category.value === 'all' || r.category === category.value)
-      && (!q || [r.name, r.category, r.zone, r.teacher, r.subject, r.description].join(' ').toLocaleLowerCase().includes(q)));
+      && (!q || [r.name, r.category, r.zone, r.teacher, r.subject, r.description, Object.values(r.staffCourses||{}).join(' ')].join(' ').toLocaleLowerCase().includes(q)));
   }
 
   function makeRect(rect, id, aerial=false) {
@@ -110,16 +111,20 @@
     if(chosenTab==='overview'){
       content='<p>'+(r.description?h(r.description):'Explore the '+h(r.name)+' space at the International School of Curaçao. Additional details will be published as they are approved.')+'</p>'+
       '<div class="detail-meta"><div><label>Location</label><strong>'+h(labelForZone(r.zone))+'</strong></div><div><label>Type of space</label><strong>'+h(r.category)+'</strong></div>'+
-      (r.subject?'<div><label>Subject</label><strong>'+h(r.subject)+'</strong></div>':'')+'</div>'+
+      (r.staffCourses && Object.keys(r.staffCourses).length?'<div><label>Teacher subjects by grade</label>'+Object.entries(r.staffCourses).map(([grade,subjects])=>'<div class=\"course-pair\"><span>'+h(grade)+'</span><strong>'+h(subjects)+'</strong></div>').join('')+'</div>':'')+'</div>'+
       '<div class="action-links"><button class="small-action" type="button" id="focusRoom">◎ Locate on map</button>'+
       (r.webUrl&&isSafeLink(r.webUrl)?'<a class="small-action" target="_blank" rel="noopener noreferrer" href="'+safeLink(r.webUrl)+'">Learn more ↗</a>':'')+'</div>';
     } else if(chosenTab==='teacher') {
-      if(r.teacher && config.showStaffNames !== false){
-        const ini=r.teacher.split(/\s+/).slice(0,2).map(x=>x[0]).join('');
-        content='<div class="staff-row"><div class="staff-avatar">'+h(ini)+'</div><div><h4>'+h(r.teacher)+'</h4><span>Named on the 2026–2027 campus diagram</span></div></div>'+
-          '<div class="staff-bio">'+(r.teacherBio?'<p>'+h(r.teacherBio)+'</p>':'<p>The teacher biography and approved portrait will appear here once provided by ISC.</p>')+'</div>';
-        if(!config.published) content+='<p><small>Staff assignments are transcribed from the supplied map and must be confirmed before publication.</small></p>';
-      } else content=emptyState('♙','Staff profile coming soon','There is no approved staff profile available for this space yet.');
+      if(r.staffName && config.showStaffNames !== false){
+        const ini=r.staffName.split(/\s+/).slice(0,2).map(x=>x[0]).join('');
+        const photo=r.staffPhoto ? '<img class="staff-portrait" src="'+h(r.staffPhoto)+'" alt="Portrait of '+h(r.staffName)+'" loading="lazy">' : '<div class="staff-avatar">'+h(ini)+'</div>';
+        const mail=r.staffEmail?'<a href="mailto:'+h(r.staffEmail)+'" class="staff-email">'+h(r.staffEmail)+'</a>':'';
+        content='<div class="staff-row">'+photo+'<div><h4>'+h(r.staffName)+'</h4>'+mail+'<div class="email-note">'+(r.staffEmailVerified?'Address provided by staff member':'Email format generated from surname + first initial; verify before publishing')+'</div></div></div>';
+        if(r.staffCourses && Object.keys(r.staffCourses).length){
+          content+='<div class="staff-bio"><h4>Classes taught</h4>'+Object.entries(r.staffCourses).map(([level,subjects])=>'<div class="course-pair"><span>'+h(level)+'</span><strong>'+h(subjects)+'</strong></div>').join('')+'</div>';
+        } else content+='<p class="staff-bio">No teaching subjects specified on the supplied roster for this role.</p>';
+        if(r.teacherBio)content+='<div class="staff-bio"><h4>Biography</h4><p>'+h(r.teacherBio)+'</p></div>';
+      } else content=emptyState('♙','Staff profile not assigned','This space does not yet have a confirmed staff assignment.');
     } else if(chosenTab==='photos'){
       if(r.photos && r.photos.length){
         content='<div class="photo-grid">'+r.photos.map((p,i)=>'<button data-photo="'+i+'" type="button" aria-label="Open '+h(r.name)+' image '+(i+1)+'"><img src="'+h(typeof p==='string'?p:p.src)+'" alt="'+h(typeof p==='string'?r.name:(p.alt||r.name))+'" loading="lazy"></button>').join('')+'</div>';
@@ -171,7 +176,7 @@
   function focusOnRoom(r){
     if(mapView!=='schematic') switchView('schematic');
     const [x,y,w,ht]=r.rect;
-    const centerX=(x+w/2)/917,centerY=(y+ht/2)/679;
+    const centerX=(x+w/2)/1672,centerY=(y+ht/2)/941;
     zoom=2.1;
     panX=(.5-centerX)*stage.clientWidth*zoom;
     panY=(.5-centerY)*stage.clientHeight*zoom;
@@ -202,7 +207,7 @@
     $('schematicView').hidden=which!=='schematic';$('droneView').hidden=which!=='drone';
     $('schematicTab').classList.toggle('active',which==='schematic');$('droneTab').classList.toggle('active',which==='drone');
     $('schematicTab').setAttribute('aria-pressed',String(which==='schematic'));$('droneTab').setAttribute('aria-pressed',String(which==='drone'));
-    $('mapHint').textContent=which==='drone'?'Switch back to school plan to select a room':'Click a space · Drag to pan · Use + / − to zoom';
+    $('mapHint').textContent=which==='drone'?'Switch back to the interactive map to select a room':'Click a space · Drag to pan · Use + / − to zoom';
   }
   $('schematicTab').addEventListener('click',()=>switchView('schematic'));
   $('droneTab').addEventListener('click',()=>switchView('drone'));
