@@ -9,9 +9,9 @@
   <meta property="og:description" content="An interactive guide to the ISC campus.">
   <title>Campus Explorer | International School of Curaçao</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="data/rooms.js"></script>
-  <script defer src="app.js"></script>
+  <link rel="stylesheet" href="styles.css?v=hotspots-20261023">
+  <script defer src="data/rooms.js?v=hotspots-20261023"></script>
+  <script defer src="app.js?v=hotspots-20261023"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to campus explorer</a>
@@ -45,7 +45,7 @@
             <div class="map-topbar"><div><span class="map-title">Campus map</span><span class="map-subtitle">Select an outlined space for more information</span></div><div class="view-switch" role="group" aria-label="Map style"><button id="schematicTab" type="button" class="active" aria-pressed="true">Interactive map</button><button id="droneTab" type="button" aria-pressed="false">Future drone view <span class="soon-dot" title="A real drone photo can be added later"></span></button></div></div>
             <div class="map-canvas" id="mapCanvas">
               <div class="map-transform" id="mapTransform">
-                <div class="schematic-view" id="schematicView"><img class="base-map" src="assets/campus-map-2026-2027.png" alt="International School of Curaçao illustrated campus map, 2026–2027, showing clickable rooms north and south of Koninginnelaan." draggable="false"><svg id="roomOverlay" class="room-overlay" viewBox="0 0 1672 941" preserveAspectRatio="none" aria-label="Select a room from the ISC school plan"></svg></div>
+                <div class="schematic-view" id="schematicView"><img class="base-map" src="assets/campus-map-2026-2027.png?v=hotspots-20261023" alt="International School of Curaçao illustrated campus map, 2026–2027, showing clickable rooms north and south of Koninginnelaan." draggable="false"><svg id="roomOverlay" class="room-overlay" viewBox="0 0 1672 941" preserveAspectRatio="none" aria-label="Select a room from the ISC school plan"></svg></div>
                 <div class="drone-view" id="droneView" hidden><div class="drone-waiting" id="droneWaiting"><span class="drone-icon" aria-hidden="true">⌁</span><h3>A fresh perspective is coming.</h3><p>ISC's drone image will appear here when available. The room list and details are already accessible in the interactive map view.</p><label class="upload-preview" for="droneUpload">Preview a drone image <span aria-hidden="true">↑</span></label><input id="droneUpload" type="file" accept="image/png,image/jpeg,image/webp" hidden><small>A local preview stays on your device. See README for publishing instructions.</small></div><div class="drone-loaded" id="droneLoaded" hidden><img id="dronePhoto" src="" alt="Aerial photograph of ISC campus" draggable="false"><svg id="droneOverlay" class="drone-overlay" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-label="Aerial room overlay"></svg><div id="uncalibrated" class="uncalibrated">Aerial hotspots still need alignment. Use the school plan to choose rooms.</div></div></div>
               </div>
               <div class="map-controls"><button type="button" id="zoomIn" title="Zoom in" aria-label="Zoom in">+</button><button type="button" id="zoomOut" title="Zoom out" aria-label="Zoom out">−</button><button type="button" id="zoomReset" title="Reset view" aria-label="Reset map view">⤢</button></div>

@@ -27,11 +27,17 @@
       && (!q || [r.name, r.category, r.zone, r.teacher, r.subject, r.description, Object.values(r.staffCourses||{}).join(' ')].join(' ').toLocaleLowerCase().includes(q)));
   }
 
-  function makeRect(rect, id, aerial=false) {
-    const el = document.createElementNS('http://www.w3.org/2000/svg','rect');
-    el.setAttribute('x',rect[0]); el.setAttribute('y',rect[1]);
-    el.setAttribute('width',rect[2]);el.setAttribute('height',rect[3]);
-    el.setAttribute('rx',aerial?'6':'0'); el.setAttribute('class','room-region');
+  const hotspotReviewMode = new URLSearchParams(location.search).has('hotspots');
+  function makeRegion(rect, id, aerial=false, polygon=null) {
+    const isPolygon = Array.isArray(polygon) && polygon.length >= 3;
+    const el = document.createElementNS('http://www.w3.org/2000/svg',isPolygon?'polygon':'rect');
+    if(isPolygon) el.setAttribute('points', polygon.map(([x,y])=>x+','+y).join(' '));
+    else {
+      el.setAttribute('x',rect[0]); el.setAttribute('y',rect[1]);
+      el.setAttribute('width',rect[2]);el.setAttribute('height',rect[3]);
+      el.setAttribute('rx',aerial?'6':'0');
+    }
+    el.setAttribute('class','room-region');
     el.setAttribute('role','button'); el.setAttribute('tabindex','0');
     el.setAttribute('data-id',id);
     const r = byId(id);
@@ -44,15 +50,28 @@
     return el;
   }
   for(const r of rooms){
-    if(Array.isArray(r.rect) && r.rect.length===4) svg.appendChild(makeRect(r.rect,r.id));
-    if(Array.isArray(r.droneRect) && r.droneRect.length===4) droneSvg.appendChild(makeRect(r.droneRect,r.id,true));
+    if(Array.isArray(r.rect) && r.rect.length===4) svg.appendChild(makeRegion(r.rect,r.id,false,r.polygon));
+    if(Array.isArray(r.droneRect) && r.droneRect.length===4) droneSvg.appendChild(makeRegion(r.droneRect,r.id,true,r.dronePolygon));
+  }
+  // Add visible bounds only in the optional QA view (?hotspots=1). Not shown to visitors.
+  if(hotspotReviewMode) {
+    document.documentElement.classList.add('hotspots-review');
+    rooms.filter(r=>r.rect).forEach((r,i)=>{
+      const [x,y,w,h] = r.rect;
+      const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+      t.setAttribute('x',x+w/2); t.setAttribute('y',y+Math.min(17,h/2));
+      t.setAttribute('text-anchor','middle'); t.setAttribute('class','hotspot-index');
+      t.setAttribute('pointer-events','none'); t.textContent=String(rooms.indexOf(r)+1);
+      svg.appendChild(t);
+    });
   }
   $('uncalibrated').hidden = rooms.some(r=>Array.isArray(r.droneRect));
 
   for(const cat of cats){const o=document.createElement('option');o.value=cat;o.textContent=cat;category.appendChild(o);}
   $('heroYear').textContent = config.schoolYear || '2026–2027';
-  $('heroCount').textContent = rooms.length + ' mapped spaces';
-  $('totalSpaces').textContent = rooms.length;
+  const mappedCount=rooms.filter(r=>Array.isArray(r.rect)&&r.rect.length===4).length;
+  $('heroCount').textContent = mappedCount + ' mapped spaces';
+  $('totalSpaces').textContent = mappedCount;
   if(config.published || config.showAdminPreviewNotice === false) $('previewBanner').hidden = true;
   if(config.droneImage){ $('dronePhoto').src=config.droneImage; $('droneWaiting').hidden=true; $('droneLoaded').hidden=false; }
 
@@ -112,7 +131,7 @@
       content='<p>'+(r.description?h(r.description):'Explore the '+h(r.name)+' space at the International School of Curaçao. Additional details will be published as they are approved.')+'</p>'+
       '<div class="detail-meta"><div><label>Location</label><strong>'+h(labelForZone(r.zone))+'</strong></div><div><label>Type of space</label><strong>'+h(r.category)+'</strong></div>'+
       (r.staffCourses && Object.keys(r.staffCourses).length?'<div><label>Teacher subjects by grade</label>'+Object.entries(r.staffCourses).map(([grade,subjects])=>'<div class=\"course-pair\"><span>'+h(grade)+'</span><strong>'+h(subjects)+'</strong></div>').join('')+'</div>':'')+'</div>'+
-      '<div class="action-links"><button class="small-action" type="button" id="focusRoom">◎ Locate on map</button>'+
+      '<div class="action-links">'+(r.rect?'<button class="small-action" type="button" id="focusRoom">◎ Locate on map</button>':'<span class="location-pending">Exact location pending verification</span>')+
       (r.webUrl&&isSafeLink(r.webUrl)?'<a class="small-action" target="_blank" rel="noopener noreferrer" href="'+safeLink(r.webUrl)+'">Learn more ↗</a>':'')+'</div>';
     } else if(chosenTab==='teacher') {
       if(r.staffName && config.showStaffNames !== false){
@@ -175,6 +194,7 @@
   function resetZoom(){setZoom(1);}
   function focusOnRoom(r){
     if(mapView!=='schematic') switchView('schematic');
+    if(!Array.isArray(r.rect))return;
     const [x,y,w,ht]=r.rect;
     const centerX=(x+w/2)/1672,centerY=(y+ht/2)/941;
     zoom=2.1;
@@ -191,12 +211,16 @@
   stage.addEventListener('pointerdown',e=>{
     if(e.button!==0 || e.target.closest('.map-controls'))return;
     pointerStart={x:e.clientX,y:e.clientY,px:panX,py:panY};lastMove=false;
-    if(e.pointerType==='mouse' || !e.target.classList.contains('room-region'))stage.setPointerCapture(e.pointerId);
+    // Do not steal the pointer from clickable SVG regions: capture retargets the click to the map canvas.
+    if(!e.target.closest('.room-region')) stage.setPointerCapture(e.pointerId);
   });
   stage.addEventListener('pointermove',e=>{
     if(!pointerStart)return;
     const dx=e.clientX-pointerStart.x,dy=e.clientY-pointerStart.y;
-    if(Math.hypot(dx,dy)>6){lastMove=true;panX=pointerStart.px+dx;panY=pointerStart.py+dy;drawTransform();stage.classList.add('is-dragging');}
+    if(Math.hypot(dx,dy)>6){
+      if(!lastMove && !stage.hasPointerCapture(e.pointerId)) { try{stage.setPointerCapture(e.pointerId);}catch{} }
+      lastMove=true;panX=pointerStart.px+dx;panY=pointerStart.py+dy;drawTransform();stage.classList.add('is-dragging');
+    }
   });
   function stopDrag(){pointerStart=null;stage.classList.remove('is-dragging');if(lastMove)setTimeout(()=>{lastMove=false;},70);}
   stage.addEventListener('pointerup',stopDrag);stage.addEventListener('pointercancel',stopDrag);

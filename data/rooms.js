@@ -1,4 +1,4 @@
-/* ISC Campus Explorer — interactive room geometry calibrated for 1672 x 941 supplied campus map.
+/* ISC Campus Explorer — hotspots redrawn from the 1672 × 941 supplied campus map (2026-10-23).
    All room assignments and email-address formats require verification before publication.
    See roster and QA notes. */
 window.ISC_CONFIG = {
@@ -11,7 +11,7 @@ window.ISC_CONFIG = {
     "sky": "#48a9d5",
     "coral": "#ef3f57"
   },
-  "schematicImage": "assets/campus-map-2026-2027.png",
+  "schematicImage": "assets/campus-map-2026-2027.png?v=hotspots-20261023",
   "droneImage": "",
   "droneAspectRatio": 1.35,
   "published": false,
@@ -544,13 +544,13 @@ window.ISC_ROOMS = [
   {
     "id": "kolibri",
     "name": "Kolibri",
-    "category": "Elementary classroom",
+    "category": "Middle & high classrooms",
     "zone": "North campus",
     "rect": [
-      83,
-      54,
-      147,
-      54
+      82,
+      55,
+      146,
+      51
     ],
     "teacher": "",
     "featured": false,
@@ -570,13 +570,13 @@ window.ISC_ROOMS = [
   {
     "id": "kadushi",
     "name": "Kadushi",
-    "category": "Elementary classroom",
+    "category": "Middle & high classrooms",
     "zone": "North campus",
     "rect": [
-      83,
-      108,
-      147,
-      55
+      82,
+      109,
+      146,
+      52
     ],
     "teacher": "",
     "featured": false,
@@ -596,13 +596,13 @@ window.ISC_ROOMS = [
   {
     "id": "lagadishi",
     "name": "Lagadishi",
-    "category": "Elementary classroom",
+    "category": "Middle & high classrooms",
     "zone": "North campus",
     "rect": [
-      83,
-      163,
-      147,
-      55
+      82,
+      162,
+      146,
+      52
     ],
     "teacher": "Jessica Chang",
     "featured": false,
@@ -626,12 +626,12 @@ window.ISC_ROOMS = [
   {
     "id": "trupial",
     "name": "Trupial",
-    "category": "Elementary classroom",
+    "category": "Middle & high classrooms",
     "zone": "North campus",
     "rect": [
-      83,
-      218,
-      147,
+      82,
+      215,
+      146,
       52
     ],
     "teacher": "Katelyn Dougherty",
@@ -658,13 +658,13 @@ window.ISC_ROOMS = [
   {
     "id": "chuchubi",
     "name": "Chuchubi",
-    "category": "Elementary classroom",
+    "category": "Middle & high classrooms",
     "zone": "North campus",
     "rect": [
-      83,
-      270,
-      147,
-      54
+      82,
+      268,
+      146,
+      52
     ],
     "teacher": "Hanadi El Hajj",
     "featured": false,
@@ -690,13 +690,13 @@ window.ISC_ROOMS = [
   {
     "id": "kala",
     "name": "Kala",
-    "category": "Elementary classroom",
+    "category": "Middle & high classrooms",
     "zone": "North campus",
     "rect": [
-      83,
-      324,
-      147,
-      55
+      82,
+      321,
+      146,
+      52
     ],
     "teacher": "Goumana El-Hage",
     "featured": false,
@@ -726,10 +726,10 @@ window.ISC_ROOMS = [
     "category": "Facilities",
     "zone": "North campus",
     "rect": [
-      265,
-      77,
-      100,
-      53
+      256,
+      76,
+      101,
+      54
     ],
     "teacher": "",
     "featured": false,
@@ -752,14 +752,14 @@ window.ISC_ROOMS = [
     "category": "Shared spaces",
     "zone": "North campus",
     "rect": [
-      251,
-      162,
-      137,
-      96
+      256,
+      161,
+      134,
+      89
     ],
     "teacher": "",
     "featured": false,
-    "description": "",
+    "description": "Roofed seating area on the MS/HS side of campus.",
     "subject": "",
     "photos": [],
     "panorama": "",
@@ -778,10 +778,10 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "North campus",
     "rect": [
-      237,
-      258,
-      153,
-      66
+      242,
+      254,
+      140,
+      59
     ],
     "teacher": "Ulises Franco",
     "featured": false,
@@ -804,10 +804,10 @@ window.ISC_ROOMS = [
     "category": "Staff spaces",
     "zone": "North campus",
     "rect": [
-      237,
-      324,
-      153,
-      57
+      242,
+      315,
+      140,
+      52
     ],
     "teacher": "",
     "featured": false,
@@ -826,14 +826,14 @@ window.ISC_ROOMS = [
   },
   {
     "id": "north-courtyard",
-    "name": "Grassy Courtyard",
+    "name": "MS/HS Grassy Lawn",
     "category": "Shared spaces",
     "zone": "North campus",
     "rect": [
-      430,
-      163,
-      244,
-      147
+      438,
+      154,
+      252,
+      154
     ],
     "teacher": "",
     "featured": false,
@@ -856,10 +856,10 @@ window.ISC_ROOMS = [
     "category": "Arts & performance",
     "zone": "North campus",
     "rect": [
-      451,
-      343,
-      145,
-      61
+      450,
+      347,
+      135,
+      51
     ],
     "teacher": "",
     "featured": true,
@@ -882,10 +882,10 @@ window.ISC_ROOMS = [
     "category": "Middle & high classrooms",
     "zone": "North campus",
     "rect": [
-      596,
-      343,
-      130,
-      61
+      591,
+      347,
+      127,
+      51
     ],
     "teacher": "Mery de la Cruz",
     "featured": false,
@@ -912,10 +912,10 @@ window.ISC_ROOMS = [
     "category": "Middle & high classrooms",
     "zone": "North campus",
     "rect": [
-      726,
-      343,
-      134,
-      61
+      723,
+      347,
+      126,
+      51
     ],
     "teacher": "Randy January",
     "featured": true,
@@ -943,10 +943,10 @@ window.ISC_ROOMS = [
     "category": "Middle & high classrooms",
     "zone": "North campus",
     "rect": [
-      860,
-      343,
+      854,
+      347,
       129,
-      61
+      51
     ],
     "teacher": "Mario Sosa",
     "featured": false,
@@ -978,10 +978,10 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "North campus",
     "rect": [
-      1121,
-      354,
-      145,
-      66
+      1126,
+      355,
+      139,
+      37
     ],
     "teacher": "Ivonne Rimon",
     "featured": false,
@@ -1004,10 +1004,10 @@ window.ISC_ROOMS = [
     "category": "Science labs",
     "zone": "North campus",
     "rect": [
-      1267,
-      354,
-      164,
-      67
+      1272,
+      355,
+      155,
+      63
     ],
     "teacher": "Jared Snyder",
     "featured": true,
@@ -1033,10 +1033,10 @@ window.ISC_ROOMS = [
     "category": "Science labs",
     "zone": "North campus",
     "rect": [
-      1431,
-      354,
-      157,
-      67
+      1435,
+      355,
+      153,
+      63
     ],
     "teacher": "Kavita Chugani",
     "featured": true,
@@ -1060,18 +1060,18 @@ window.ISC_ROOMS = [
   },
   {
     "id": "north-garden",
-    "name": "MS/HS Covered Lunch Shelter",
+    "name": "MS/HS Walkway",
     "category": "Shared spaces",
     "zone": "North campus",
     "rect": [
-      399,
-      145,
-      340,
-      201
+      446,
+      313,
+      274,
+      27
     ],
     "teacher": "",
     "featured": false,
-    "description": "",
+    "description": "Paved access walkway on the MS/HS side of campus, between the lawn and the Legacy Theater corridor.",
     "subject": "",
     "photos": [],
     "panorama": "",
@@ -1086,18 +1086,18 @@ window.ISC_ROOMS = [
   },
   {
     "id": "north-outdoor-seating",
-    "name": "MS/HS Lunch Area",
+    "name": "MS/HS Outdoor Lunch Area",
     "category": "Shared spaces",
     "zone": "North campus",
     "rect": [
-      954,
-      190,
-      346,
-      158
+      738,
+      150,
+      633,
+      197
     ],
     "teacher": "",
     "featured": false,
-    "description": "",
+    "description": "Open-air MS/HS lunch courtyard with red-and-blue umbrella tables.",
     "subject": "",
     "photos": [],
     "panorama": "",
@@ -1108,7 +1108,57 @@ window.ISC_ROOMS = [
     "staffPhoto": "",
     "staffEmail": "",
     "staffEmailVerified": false,
-    "staffCourses": {}
+    "staffCourses": {},
+    "polygon": [
+      [
+        738,
+        150
+      ],
+      [
+        1284,
+        150
+      ],
+      [
+        1284,
+        172
+      ],
+      [
+        1313,
+        172
+      ],
+      [
+        1313,
+        260
+      ],
+      [
+        1371,
+        260
+      ],
+      [
+        1371,
+        347
+      ],
+      [
+        1111,
+        347
+      ],
+      [
+        1111,
+        332
+      ],
+      [
+        1087,
+        332
+      ],
+      [
+        1087,
+        341
+      ],
+      [
+        739,
+        341
+      ]
+    ]
   },
   {
     "id": "pe-1",
@@ -1116,10 +1166,10 @@ window.ISC_ROOMS = [
     "category": "Sports & recreation",
     "zone": "North campus",
     "rect": [
-      1309,
-      86,
-      99,
-      49
+      1314,
+      85,
+      93,
+      46
     ],
     "teacher": "Jos Nous",
     "featured": false,
@@ -1148,10 +1198,10 @@ window.ISC_ROOMS = [
     "category": "Sports & recreation",
     "zone": "North campus",
     "rect": [
-      1472,
-      86,
-      111,
-      49
+      1482,
+      85,
+      102,
+      46
     ],
     "teacher": "Tristano Tjon-a-Koy",
     "featured": false,
@@ -1176,10 +1226,10 @@ window.ISC_ROOMS = [
     "category": "Sports & recreation",
     "zone": "North campus",
     "rect": [
-      1309,
+      1315,
       135,
-      275,
-      107
+      269,
+      66
     ],
     "teacher": "",
     "featured": true,
@@ -1202,10 +1252,10 @@ window.ISC_ROOMS = [
     "category": "Arts & performance",
     "zone": "North campus",
     "rect": [
-      1393,
-      265,
-      194,
-      80
+      1400,
+      266,
+      185,
+      78
     ],
     "teacher": "Babette de Waele",
     "featured": false,
@@ -1236,10 +1286,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      177,
-      518,
-      136,
-      62
+      178,
+      516,
+      131,
+      61
     ],
     "teacher": "Nina Kommeroh",
     "featured": false,
@@ -1264,10 +1314,10 @@ window.ISC_ROOMS = [
     "category": "Arts & performance",
     "zone": "South campus",
     "rect": [
-      177,
-      580,
-      136,
-      66
+      178,
+      581,
+      131,
+      61
     ],
     "teacher": "Allison Violenes",
     "featured": false,
@@ -1297,10 +1347,10 @@ window.ISC_ROOMS = [
     "category": "Facilities",
     "zone": "South campus",
     "rect": [
-      177,
+      178,
       646,
-      136,
-      53
+      131,
+      48
     ],
     "teacher": "",
     "featured": false,
@@ -1323,9 +1373,9 @@ window.ISC_ROOMS = [
     "category": "Staff spaces",
     "zone": "South campus",
     "rect": [
-      177,
-      699,
-      136,
+      178,
+      698,
+      131,
       58
     ],
     "teacher": "Diana Melfor",
@@ -1349,10 +1399,10 @@ window.ISC_ROOMS = [
     "category": "Arts & performance",
     "zone": "South campus",
     "rect": [
-      49,
-      795,
-      58,
-      80
+      48,
+      797,
+      53,
+      71
     ],
     "teacher": "",
     "featured": false,
@@ -1375,10 +1425,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      115,
-      802,
-      101,
-      67
+      113,
+      801,
+      94,
+      62
     ],
     "teacher": "Elsa LeGrand",
     "featured": false,
@@ -1403,10 +1453,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      216,
-      802,
-      94,
-      67
+      211,
+      801,
+      90,
+      62
     ],
     "teacher": "Allison Ische",
     "featured": false,
@@ -1431,10 +1481,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      310,
-      802,
-      93,
-      67
+      304,
+      801,
+      92,
+      62
     ],
     "teacher": "Sara Susanna",
     "featured": false,
@@ -1459,10 +1509,10 @@ window.ISC_ROOMS = [
     "category": "Facilities",
     "zone": "South campus",
     "rect": [
-      488,
-      520,
-      134,
-      62
+      490,
+      522,
+      128,
+      57
     ],
     "teacher": "",
     "featured": false,
@@ -1485,10 +1535,10 @@ window.ISC_ROOMS = [
     "category": "Shared spaces",
     "zone": "South campus",
     "rect": [
-      492,
-      586,
-      194,
-      53
+      489,
+      584,
+      187,
+      50
     ],
     "teacher": "",
     "featured": false,
@@ -1511,10 +1561,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      726,
-      522,
-      106,
-      61
+      716,
+      525,
+      117,
+      53
     ],
     "teacher": "Halimeh Al Ayoubi",
     "featured": false,
@@ -1539,10 +1589,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      832,
-      522,
-      120,
-      61
+      838,
+      525,
+      113,
+      53
     ],
     "teacher": "Dareen Shehab",
     "featured": false,
@@ -1567,14 +1617,14 @@ window.ISC_ROOMS = [
     "category": "Shared spaces",
     "zone": "South campus",
     "rect": [
-      493,
-      639,
-      190,
-      152
+      488,
+      640,
+      199,
+      150
     ],
     "teacher": "",
     "featured": true,
-    "description": "Covered gathering area on the elementary side of campus.",
+    "description": "Roofed elementary multipurpose dining and seating area.",
     "subject": "",
     "photos": [],
     "panorama": "",
@@ -1593,10 +1643,10 @@ window.ISC_ROOMS = [
     "category": "Student support",
     "zone": "South campus",
     "rect": [
-      690,
-      623,
-      98,
-      67
+      692,
+      622,
+      93,
+      65
     ],
     "teacher": "Anouk van Eerdewijk",
     "featured": false,
@@ -1619,10 +1669,10 @@ window.ISC_ROOMS = [
     "category": "Student support",
     "zone": "South campus",
     "rect": [
+      692,
       691,
-      690,
-      97,
-      106
+      93,
+      99
     ],
     "teacher": "Angelica Galicia",
     "featured": false,
@@ -1646,9 +1696,9 @@ window.ISC_ROOMS = [
     "zone": "South campus",
     "rect": [
       788,
-      623,
-      150,
-      171
+      622,
+      135,
+      168
     ],
     "teacher": "Aftan Schoonen",
     "featured": true,
@@ -1678,10 +1728,10 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "South campus",
     "rect": [
-      501,
-      792,
-      97,
-      62
+      500,
+      796,
+      92,
+      58
     ],
     "teacher": "Diana Melfor",
     "featured": false,
@@ -1704,10 +1754,10 @@ window.ISC_ROOMS = [
     "category": "Learning spaces",
     "zone": "South campus",
     "rect": [
-      598,
-      792,
-      115,
-      62
+      596,
+      796,
+      116,
+      58
     ],
     "teacher": "",
     "featured": true,
@@ -1730,10 +1780,10 @@ window.ISC_ROOMS = [
     "category": "Facilities",
     "zone": "South campus",
     "rect": [
-      714,
-      792,
-      104,
-      62
+      718,
+      796,
+      95,
+      58
     ],
     "teacher": "",
     "featured": false,
@@ -1757,9 +1807,9 @@ window.ISC_ROOMS = [
     "zone": "South campus",
     "rect": [
       818,
-      792,
-      113,
-      62
+      796,
+      107,
+      58
     ],
     "teacher": "",
     "featured": true,
@@ -1783,9 +1833,9 @@ window.ISC_ROOMS = [
     "zone": "South campus",
     "rect": [
       1025,
-      639,
-      352,
-      197
+      630,
+      357,
+      207
     ],
     "teacher": "",
     "featured": true,
@@ -1809,8 +1859,8 @@ window.ISC_ROOMS = [
     "zone": "South campus",
     "rect": [
       1076,
-      527,
-      109,
+      525,
+      108,
       55
     ],
     "teacher": "Ana Arboleda",
@@ -1834,9 +1884,9 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "South campus",
     "rect": [
-      1185,
-      527,
-      81,
+      1188,
+      525,
+      74,
       55
     ],
     "teacher": "Valerie Riberio",
@@ -1860,9 +1910,9 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "South campus",
     "rect": [
-      1266,
-      527,
-      75,
+      1267,
+      525,
+      68,
       55
     ],
     "teacher": "Douglas Vaughan",
@@ -1885,15 +1935,10 @@ window.ISC_ROOMS = [
     "name": "Director",
     "category": "Offices",
     "zone": "South campus",
-    "rect": [
-      1266,
-      527,
-      75,
-      55
-    ],
+    "rect": null,
     "teacher": "Douglas Vaughan",
     "featured": false,
-    "description": "",
+    "description": "Director office location is not independently marked on the most recent campus map. Visit the Admissions Office or Main Office for assistance.",
     "subject": "",
     "photos": [],
     "panorama": "",
@@ -1912,9 +1957,9 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "South campus",
     "rect": [
-      1341,
-      527,
-      73,
+      1340,
+      525,
+      71,
       55
     ],
     "teacher": "",
@@ -1938,10 +1983,10 @@ window.ISC_ROOMS = [
     "category": "Facilities",
     "zone": "South campus",
     "rect": [
-      1498,
-      536,
-      99,
-      45
+      1507,
+      544,
+      88,
+      34
     ],
     "teacher": "",
     "featured": false,
@@ -1964,10 +2009,10 @@ window.ISC_ROOMS = [
     "category": "Offices",
     "zone": "South campus",
     "rect": [
-      1498,
-      506,
-      99,
-      30
+      1507,
+      507,
+      88,
+      34
     ],
     "teacher": "",
     "featured": false,
@@ -1990,10 +2035,10 @@ window.ISC_ROOMS = [
     "category": "Student support",
     "zone": "South campus",
     "rect": [
-      1447,
-      595,
-      65,
-      86
+      1451,
+      593,
+      59,
+      76
     ],
     "teacher": "",
     "featured": false,
@@ -2016,10 +2061,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      1447,
-      682,
-      65,
-      45
+      1451,
+      675,
+      59,
+      47
     ],
     "teacher": "",
     "featured": false,
@@ -2042,10 +2087,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      1447,
-      728,
-      65,
-      48
+      1451,
+      727,
+      59,
+      40
     ],
     "teacher": "",
     "featured": false,
@@ -2068,10 +2113,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      1472,
+      1474,
       783,
       119,
-      58
+      53
     ],
     "teacher": "",
     "featured": false,
@@ -2094,10 +2139,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      1512,
-      595,
-      77,
-      41
+      1514,
+      593,
+      83,
+      40
     ],
     "teacher": "",
     "featured": false,
@@ -2120,10 +2165,10 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      1512,
-      637,
-      77,
-      43
+      1514,
+      638,
+      83,
+      36
     ],
     "teacher": "",
     "featured": false,
@@ -2146,14 +2191,118 @@ window.ISC_ROOMS = [
     "category": "Elementary classroom",
     "zone": "South campus",
     "rect": [
-      1512,
+      1514,
       680,
-      77,
-      95
+      83,
+      87
     ],
     "teacher": "",
     "featured": false,
     "description": "",
+    "subject": "",
+    "photos": [],
+    "panorama": "",
+    "streetViewUrl": "",
+    "webUrl": "",
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
+  },
+  {
+    "id": "print-center",
+    "name": "Print Center",
+    "category": "Offices",
+    "zone": "North campus",
+    "rect": [
+      1126,
+      395,
+      139,
+      23
+    ],
+    "teacher": "",
+    "featured": false,
+    "description": "Printing services adjacent to the Secondary Office.",
+    "subject": "",
+    "photos": [],
+    "panorama": "",
+    "streetViewUrl": "",
+    "webUrl": "",
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
+  },
+  {
+    "id": "stage",
+    "name": "Gym / Auditorium Stage",
+    "category": "Arts & performance",
+    "zone": "North campus",
+    "rect": [
+      1414,
+      85,
+      61,
+      46
+    ],
+    "teacher": "",
+    "featured": false,
+    "description": "Stage section of the gym/auditorium.",
+    "subject": "",
+    "photos": [],
+    "panorama": "",
+    "streetViewUrl": "",
+    "webUrl": "",
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
+  },
+  {
+    "id": "gym-entrance",
+    "name": "Gym / Auditorium Entrance",
+    "category": "Facilities",
+    "zone": "North campus",
+    "rect": [
+      1398,
+      204,
+      122,
+      33
+    ],
+    "teacher": "",
+    "featured": false,
+    "description": "Main marked entrance to the gym/auditorium.",
+    "subject": "",
+    "photos": [],
+    "panorama": "",
+    "streetViewUrl": "",
+    "webUrl": "",
+    "droneRect": null,
+    "staffName": "",
+    "staffPhoto": "",
+    "staffEmail": "",
+    "staffEmailVerified": false,
+    "staffCourses": {}
+  },
+  {
+    "id": "hr-files",
+    "name": "HR Files",
+    "category": "Offices",
+    "zone": "South campus",
+    "rect": [
+      1416,
+      525,
+      75,
+      55
+    ],
+    "teacher": "",
+    "featured": false,
+    "description": "Records storage adjacent to the administrative offices.",
     "subject": "",
     "photos": [],
     "panorama": "",
